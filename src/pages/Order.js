@@ -1,5 +1,7 @@
 import React from "react";
 
-export default function Order() {
+function Order() {
   return <div>Order</div>;
 }
+
+export default Order;
