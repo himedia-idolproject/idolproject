@@ -11,11 +11,17 @@ const initialState = {
       discount: 0.1,
       image: "",
     },
+    {
+      id: 2,
+      idolGroup: "BlackPink",
+      name: "Black Pink Calender",
+      category: ""
+    }
   ],
 };
 
 const productSlice = createSlice({
-  name: "prodcuts",
+  name: "products",
   initialState,
   reducers: {},
 });
