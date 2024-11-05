@@ -1,0 +1,45 @@
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.container {
+  width: 1280px;
+  height: 800px;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid #000; */
+  z-index: 5;
+}
+
+.icon {
+  margin: 87px 0 58px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.subtitle {
+  margin: 15px 0 43px;
+  color: #ababab;
+}
+
+.touch {
+  font-weight: 700;
+}
+
+.page-exit {
+  animation: fadeOut 0.5s forwards;
+}
