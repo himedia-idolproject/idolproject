@@ -222,8 +222,8 @@ const initialState = {
       id: 2,
       idolGroup: "BlackPink",
       name: "Black Pink Calender",
-      category: ""
-    }
+      category: "",
+    },
   ],
 };
 

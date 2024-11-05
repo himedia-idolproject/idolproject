@@ -43,3 +43,9 @@ header {
   font-size: 32px;
   line-height: 46.34px;
 }
+.nav-linkActive {
+    color: black;
+}
+.nav-link {
+    color: grey
+}
