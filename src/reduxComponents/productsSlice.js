@@ -9,7 +9,7 @@ const initialState = {
       category: "accessory",
       price: 12000,
       discount: 0,
-      image: "",
+      image: "image/BLACKPINK_Goods_Image/accessory/1.webp",
     },
     {
       id: 2,
