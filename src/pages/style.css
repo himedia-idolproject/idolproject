@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+  font-family: "Noto Sans KR";
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 282px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: 1px solid #222;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: #222;
+}
+h3 {
+  font-size: 24px;
+  text-decoration: underline;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+strong {
+  font-size: 20px;
+}
+s {
+  font-weight: normal;
+  font-size: 16px;
+}
+em {
+  font-style: normal;
+  font-size: 16px;
+  color: #ff2626;
+}
+span {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+section {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.swiper-slide > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}

@@ -1,69 +1,62 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  cartItemList: [],
-  totalQuantity: 0,
-  totalPrice: 0,
+  items: [],
+  total: 0,
 };
-
+// quantity는 필요한 컴포넌트에서 useState로 생성하여서 넘기는걸로
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action) => {
-      const existingItem = state.cartItemList.find(
-        (item) => item.id === action.payload.id
-      );
+    addItem: (state, action) => {
+      const newItem = action.payload;
+      const existingItem = state.items.find((item) => item.id === newItem.id);
+
       if (existingItem) {
-        existingItem.quantity += action.payload.quantity;
+        existingItem.quantity += newItem.quantity;
       } else {
-        state.cartItemList.push(action.payload);
+        state.items.push(newItem);
       }
-      state.totalQuantity += action.payload.quantity;
-      state.totalPrice +=
-        (action.payload.price -
-          action.payload.price * action.payload.discount) *
-        action.payload.quantity;
-    },
-    removeFromCart: (state, action) => {
-      const existingItem = state.cartItemList.find(
-        (item) => item.id === action.payload.id
+      state.total = state.items.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
       );
-      if (existingItem) {
-        state.totalPrice -=
-          (existingItem.price - existingItem.price * existingItem.discount) *
-          existingItem.quantity;
-        state.totalQuantity -= existingItem.quantity;
-        state.cartItemList = state.cartItemList.filter(
-          (item) => item.id !== action.payload.id
-        );
-      }
     },
+
     updateQuantity: (state, action) => {
       const { id, quantity } = action.payload;
-      const existingItem = state.cartItemList.find((item) => item.id === id);
-      if (existingItem) {
-        state.totalPrice -=
-          (existingItem.price - existingItem.price * existingItem.discount) *
-          existingItem.quantity;
-        state.totalQuantity -= existingItem.quantity;
-
-        existingItem.quantity = quantity;
-
-        state.totalPrice +=
-          (existingItem.price - existingItem.price * existingItem.discount) *
-          existingItem.quantity;
-        state.totalQuantity += existingItem.quantity;
+      if (quantity === 0) {
+        // 수량이 2일때 버튼을 누르면 1이 payload로 넘어오는 구조, 수량이 1일때 버튼을 누르면 0이 payload로 넘어와서 리렌더링이됨
+        state.items = state.items.filter((item) => item.id !== id);
+      } else {
+        const item = state.items.find((item) => item.id === id);
+        if (item) {
+          item.quantity = quantity;
+        }
       }
+      state.total = state.items.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+      );
     },
+
+    removeItem: (state, action) => {
+      state.items = state.items.filter((item) => item.id !== action.payload);
+      state.total = state.items.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+      );
+    },
+
     clearCart: (state) => {
-      state.cartItemList = [];
-      state.totalQuantity = 0;
-      state.totalPrice = 0;
+      state.items = [];
+      state.total = 0;
     },
   },
 });
 
-export const { addToCart, removeFromCart, updateQuantity, clearCart } =
+export const { addItem, updateQuantity, removeItem, clearCart } =
   cartSlice.actions;
+
 export default cartSlice.reducer;
