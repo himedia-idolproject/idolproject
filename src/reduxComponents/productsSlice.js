@@ -9,7 +9,7 @@ const initialState = {
       category: "accessory",
       price: 12000,
       discount: 0,
-      image: "image/BLACKPINK_Goods_Image/accessory/1.webp",
+      image: "image/bts/accessory/1.jpg",
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const initialState = {
       category: "accessory",
       price: 15000,
       discount: 0.1,
-      image: "",
+      image: "image/bts/accessory/2.jpg",
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const initialState = {
       category: "accessory",
       price: 31200,
       discount: 0.1,
-      image: "",
+      image: "image/bts/accessory/3.png",
     },
     {
       id: 4,
@@ -36,7 +36,7 @@ const initialState = {
       category: "stationery",
       price: 50000,
       discount: 0.1,
-      image: "",
+      image: "image/bts/stationery/1.png",
     },
     {
       id: 5,
@@ -45,7 +45,7 @@ const initialState = {
       category: "stationery",
       price: 26960,
       discount: 0.1,
-      image: "",
+      image: "image/bts/stationery/2.png",
     },
     {
       id: 6,
@@ -54,7 +54,7 @@ const initialState = {
       category: "stationery",
       price: 19000,
       discount: 0.1,
-      image: "",
+      image: "image/bts/stationery/3.png",
     },
     {
       id: 7,
@@ -63,7 +63,7 @@ const initialState = {
       category: "accessory",
       price: 28000,
       discount: 0,
-      image: "",
+      image: "image/newjeans/accessory/1.webp",
     },
     {
       id: 8,
@@ -72,7 +72,7 @@ const initialState = {
       category: "accessory",
       price: 13000,
       discount: 0,
-      image: "",
+      image: "image/newjeans/accessory/2.jpg",
     },
     {
       id: 9,
@@ -81,7 +81,7 @@ const initialState = {
       category: "accessory",
       price: 20000,
       discount: 0,
-      image: "",
+      image: "image/newjeans/accessory/3.jpg",
     },
     {
       id: 10,
@@ -90,7 +90,7 @@ const initialState = {
       category: "stationery",
       price: 64000,
       discount: 0.1,
-      image: "",
+      image: "image/newjeans/stationery/1.webp",
     },
     {
       id: 11,
@@ -99,7 +99,7 @@ const initialState = {
       category: "stationery",
       price: 45000,
       discount: 0.1,
-      image: "",
+      image: "image/newjeans/stationery/2.jpg",
     },
     {
       id: 12,
@@ -108,7 +108,7 @@ const initialState = {
       category: "stationery",
       price: 13000,
       discount: 0.1,
-      image: "",
+      image: "image/newjeans/stationery/3.webp",
     },
     {
       id: 13,
@@ -117,7 +117,7 @@ const initialState = {
       category: "accessory",
       price: 13000,
       discount: 0,
-      image: "",
+      image: "image/seventeen/accessory/1.png",
     },
     {
       id: 14,
@@ -126,7 +126,7 @@ const initialState = {
       category: "accessory",
       price: 13000,
       discount: 0.1,
-      image: "",
+      image: "image/seventeen/accessory/2.png",
     },
     {
       id: 15,
@@ -135,7 +135,7 @@ const initialState = {
       category: "accessory",
       price: 15000,
       discount: 0,
-      image: "",
+      image: "image/seventeen/accessory/3.png",
     },
     {
       id: 16,
@@ -144,7 +144,7 @@ const initialState = {
       category: "stationery",
       price: 40000,
       discount: 0.1,
-      image: "",
+      image: "image/seventeen/stationery/1.png",
     },
     {
       id: 17,
@@ -153,7 +153,7 @@ const initialState = {
       category: "stationery",
       price: 80000,
       discount: 0.1,
-      image: "",
+      image: "image/seventeen/stationery/2.png",
     },
     {
       id: 18,
@@ -162,7 +162,7 @@ const initialState = {
       category: "stationery",
       price: 15000,
       discount: 0,
-      image: "",
+      image: "image/seventeen/stationery/3.png",
     },
     {
       id: 19,
@@ -171,7 +171,7 @@ const initialState = {
       category: "accessory",
       price: 30000,
       discount: 0.1,
-      image: "",
+      image: "image/blackpink/accessory/1.webp",
     },
     {
       id: 20,
@@ -180,7 +180,7 @@ const initialState = {
       category: "accessory",
       price: 18000,
       discount: 0,
-      image: "",
+      image: "image/blackpink/accessory/2.png",
     },
     {
       id: 21,
@@ -189,7 +189,7 @@ const initialState = {
       category: "accessory",
       price: 10000,
       discount: 0,
-      image: "",
+      image: "image/blackpink/accessory/3.jpeg",
     },
     {
       id: 22,
@@ -198,7 +198,7 @@ const initialState = {
       category: "stationery",
       price: 21000,
       discount: 0.1,
-      image: "",
+      image: "image/blackpink/stationery/1.jpg",
     },
     {
       id: 23,
@@ -207,7 +207,7 @@ const initialState = {
       category: "stationery",
       price: 33000,
       discount: 0.1,
-      image: "",
+      image: "image/blackpink/stationery/2.webp",
     },
     {
       id: 24,
@@ -216,7 +216,7 @@ const initialState = {
       category: "stationery",
       price: 8000,
       discount: 0.1,
-      image: "",
+      image: "image/blackpink/stationery/3.jpg",
     },
   ],
 };
