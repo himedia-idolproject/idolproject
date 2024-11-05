@@ -16,8 +16,8 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/product/:idolGroup" element={<ProductList />}></Route>
-            <Route path="/product/:idolGroup/:id" element={<ProductDetail />}></Route>
+            <Route path="/product/:idol_group" element={<ProductList />}></Route>
+            <Route path="/product/:idol_group/:id" element={<ProductDetail />}></Route>
             <Route path="/order" element={<Order />}></Route>
             <Route path="/payment" element={<Payment />}></Route>
           </Routes>

@@ -45,10 +45,16 @@ body {
   border-radius: 10%;
   border: 1px solid #222;
 }
+
 .swiper-button-prev,
 .swiper-button-next {
+  top: 150px;
   color: #222;
 }
+
+.swiper-button-next {
+}
+
 h3 {
   font-size: 24px;
   text-decoration: underline;
@@ -73,9 +79,9 @@ span {
   justify-content: center;
 }
 section {
-  width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0;
+  padding: 30px 90px 0;
 }
 
 .swiper-slide > div {

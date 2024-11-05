@@ -13,7 +13,6 @@ export default function Payment() {
         <Items />
         <Items />
       </div>
-
       <div className={style.box}>
         <div className={style.first}>
           <h1 className={style.sub}>상품금액</h1>
@@ -36,13 +35,10 @@ export default function Payment() {
         <ul>
           <li>• 교환 및 반품은 수령 후 7일 이내로 접수하셔야합니다.</li>
           <li>• 세트 상품의 경우 부분 교환 및 부분 환불이 불가합니다.</li>
+          <li>• 고객님의 단순 변심에 의한 교환/반품일 경우, 환불 불가능합 &nbsp;&nbsp;니다.</li>
           <li>
-            • 고객님의 단순 변심에 의한 교환/반품일 경우, 환불 불가능합
-            &nbsp;&nbsp;니다.
-          </li>
-          <li>
-            • 고객님에 의한 상품,라벨, 택 등이 훼손되었을 경우와 상품의
-            &nbsp;&nbsp;사용 후에는 교환 및 환불이 불가능합니다.
+            • 고객님에 의한 상품,라벨, 택 등이 훼손되었을 경우와 상품의 &nbsp;&nbsp;사용 후에는 교환 및 환불이
+            불가능합니다.
           </li>
         </ul>
         <div className={style.btn}>
