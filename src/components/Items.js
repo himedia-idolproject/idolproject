@@ -20,10 +20,10 @@ export default function Items() {
         <div>
           <div className={style.btn}>
             <button className={style.moveBtn}>
-              <Plus />
+              <Plus className={style.icon} />
             </button>
             <button className={style.moveBtn}>
-              <Minus />
+              <Minus className={style.icon} />
             </button>
           </div>
           <p className={style.pName}>수량 1개</p>
