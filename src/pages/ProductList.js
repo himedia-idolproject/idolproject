@@ -47,9 +47,6 @@ export default function App() {
           <SwiperSlide>
             <SwiperItem />
           </SwiperSlide>
-          <SwiperSlide>
-            <SwiperItem />
-          </SwiperSlide>
         </Swiper>
       </section>
     </>
