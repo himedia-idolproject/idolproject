@@ -5,7 +5,8 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Order from "./pages/Order";
 import Payment from "./pages/Payment";
-import Product from "./pages/Product";
+import ProductList from "./pages/ProductList";
+import ProductDetail from "./pages/ProductDetail";
 import store from "./reduxComponents/store";
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/product" element={<Product />}></Route>
+            <Route path="/product/:idolGroup" element={<ProductList />}></Route>
+            <Route path="/product/:idolGroup/:id" element={<ProductDetail />}></Route>
             <Route path="/order" element={<Order />}></Route>
             <Route path="/payment" element={<Payment />}></Route>
           </Routes>
