@@ -1,0 +1,52 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 680px;
+  display: flex;
+  align-items: center;
+  padding: 0px 61.5px 20px;
+}
+.com {
+  border: 1px solid #000;
+  width: 557px;
+  height: 166px;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.bigBox {
+  border: 1px solid #000;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.moveBtn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pName {
+  text-align: center;
+  font-size: 16px;
+  padding: 5px 10px;
+}
