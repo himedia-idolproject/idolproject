@@ -1,13 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart } from "../reduxComponents/cartSlice";
+import { removeItem } from "../reduxComponents/cartSlice";
 
 const Order = () => {
   const cartItems = useSelector((state) => state.cart.cartItemList);
   const dispatch = useDispatch();
 
   const handleRemoveFromCart = (item) => {
-    dispatch(removeFromCart(item));
+    dispatch(removeItem(item));
   };
 
   return (

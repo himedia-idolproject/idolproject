@@ -97,7 +97,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 650px; /* 버튼 섹션의 최대 너비 */
+    max-width: 650px; 
     max-height: 100px;
   }
   

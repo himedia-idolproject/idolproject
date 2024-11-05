@@ -1,20 +1,11 @@
-import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { useSwipeable } from "react-swipeable";
+import { Link, useLocation } from "react-router-dom";
+import style from "./Header.module.css";
 
 export default function Header() {
-  const [showArrows, setShowArrows] = useState(false);
-  const groupName = useParams();
-
-  const handlers = useSwipeable({
-    onSwiped: () => {
-      setShowArrows(true);
-      setTimeout(() => setShowArrows(false), 2000);
-    },
-  });
+  const location = useLocation();
 
   const getLinkStyle = (path) => {
-    return groupName === path ? "nav-linkActive" : "nav-link";
+    return location.pathname === path ? "nav-linkActive" : "nav-link";
   };
 
   return (
@@ -24,18 +15,21 @@ export default function Header() {
           <img src="/idolmateLogo.png" className="logoImage" alt="로고이미지" />
         </Link>
       </div>
-      <div {...handlers} className="nav-container">
+      <div className="nav-container">
         <nav>
           <ul>
             <li>
-              <Link to="/products/all" className={getLinkStyle("all")}>
+              <Link
+                to="/products/all"
+                className={style[getLinkStyle("/products/all")]}
+              >
                 전체
               </Link>
             </li>
             <li>
               <Link
                 to="/products/newjeans"
-                className={getLinkStyle("newjeans")}
+                className={style[getLinkStyle("/products/newjeans")]}
               >
                 뉴진스
               </Link>
@@ -43,7 +37,7 @@ export default function Header() {
             <li>
               <Link
                 to="/products/seventeen"
-                className={getLinkStyle("seventeen")}
+                className={style[getLinkStyle("/products/seventeen")]}
               >
                 세븐틴
               </Link>
@@ -51,24 +45,21 @@ export default function Header() {
             <li>
               <Link
                 to="/products/blackpink"
-                className={getLinkStyle("blackpink")}
+                className={style[getLinkStyle("/products/blackpink")]}
               >
                 블랙핑크
               </Link>
             </li>
             <li>
-              <Link to="/products/bts" className={getLinkStyle("bts")}>
+              <Link
+                to="/products/bts"
+                className={style[getLinkStyle("/products/bts")]}
+              >
                 BTS
               </Link>
             </li>
           </ul>
         </nav>
-        {showArrows && (
-          <div className="arrows">
-            <span className="arrow-left">{"<"}</span>
-            <span className="arrow-right">{">"}</span>
-          </div>
-        )}
       </div>
     </div>
   );
