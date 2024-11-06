@@ -1,3 +1,12 @@
 .cartItem {
   cursor: pointer;
 }
+.originPrice {
+  color: rgb(138, 138, 138);
+  text-decoration: line-through;
+}
+.discountPrice,
+.priceTag {
+  color: black;
+  font-size: 18px;
+}

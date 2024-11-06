@@ -27,23 +27,20 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  /* background: #fff; */
 
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 0;
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 282px;
+  height: 232.75px;
   object-fit: cover;
   border-radius: 10%;
-  border: 1px solid #222;
+  border: 3px solid rgb(255, 181, 255);
 }
 
 .swiper-button-prev,
@@ -58,7 +55,7 @@ body {
 h3 {
   font-size: 24px;
   text-decoration: underline;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   font-weight: bold;
 }
 strong {
@@ -89,4 +86,43 @@ section {
   flex-direction: column;
   gap: 20px;
   overflow: hidden;
+}
+
+.buttonDiv {
+  position: sticky; 
+  left: 1200px;
+  width: 80px;
+  bottom: 30px; 
+  z-index: 1000; 
+  padding: 10px; 
+  border-radius: 10px;
+}
+
+.topButton {
+  border: 1px solid black;
+  border-radius: 10px 10px 0 0;
+  height: 60px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.bottomButton {
+  border: 1px solid black;
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.cartAmount {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  background-color: #eee;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  right: 18px;
+  top: 15px;
 }
