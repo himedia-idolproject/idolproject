@@ -1,15 +1,33 @@
 import React from "react";
-import myImage from "./../images/bts/accessory/1.jpg";
 import style from "./swiperItem.module.css";
+import { useNavigate } from "react-router-dom";
 
-export default function SwiperItem() {
+export default function SwiperItem({ product }) {
+  const discountedPrice = product.price - product.price * product.discount;
+  const navigate = useNavigate();
+
+  function selectedItem() {
+    navigate(`/product/${product.idolGroup}/${product.id}`);
+  }
+
   return (
-    <div className={style.cartItem}>
-      <img src={myImage} alt="BTS 키링" />
-      <strong>메뉴이름</strong>
+    <div onClick={selectedItem} className={style.cartItem}>
+      <img
+        src={`${process.env.PUBLIC_URL}/${product.image}`}
+        alt={product.name}
+      />
+      <strong>{product.name}</strong>
       <span>
-        <s>원래가격</s>
-        <em>할인가격</em>
+        {product.discount !== 0 ? (
+          <>
+            <s className={style["priceTag"]}>
+              {product.price.toLocaleString()}
+            </s>
+            <em>{discountedPrice.toLocaleString()}</em>
+          </>
+        ) : (
+          <s>{product.price.toLocaleString()}</s>
+        )}
       </span>
     </div>
   );
