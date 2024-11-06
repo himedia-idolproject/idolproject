@@ -23,7 +23,6 @@ export default function Home() {
   };
 
   const handleClick = () => {
-    // 애니메이션이 완료된 후 페이지 이동
     const element = document.querySelector(`.${style.container}`);
     element.style.animation = `${style.fadeOut} 0.5s forwards`;
 

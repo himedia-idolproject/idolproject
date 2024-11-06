@@ -27,7 +27,6 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  /* background: #fff; */
 
   display: flex;
   justify-content: center;
@@ -90,15 +89,12 @@ section {
 }
 
 .buttonDiv {
-  position: sticky; /* Sticky position to follow scrolling */
+  position: sticky; 
   left: 1200px;
   width: 80px;
-  bottom: 30px; /* Distance from the bottom edge */
-  z-index: 1000; /* Ensure it stays on top of other content */
-  padding: 10px; /* Optional: Add padding for button spacing */
-
-  /* Optional styles for visibility */
-
+  bottom: 30px; 
+  z-index: 1000; 
+  padding: 10px; 
   border-radius: 10px;
 }
 
@@ -107,7 +103,7 @@ section {
   border-radius: 10px 10px 0 0;
   height: 60px;
   width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .bottomButton {
@@ -115,7 +111,7 @@ section {
   border-radius: 0 0 10px 10px;
   width: 100%;
   height: 60px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .cartAmount {
