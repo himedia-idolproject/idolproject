@@ -1,5 +1,108 @@
 import React from "react";
+import style from "./home.module.css";
+import Granim from "react-granim";
+import { useNavigate } from "react-router-dom";
+import { motion, transform } from "framer-motion";
 
 export default function Home() {
-  return <div>Home</div>;
+  const nav = useNavigate();
+
+  const pageTransition = {
+    initial: {
+      opacity: 0,
+      y: 20,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+    },
+  };
+
+  const handleClick = () => {
+    const element = document.querySelector(`.${style.container}`);
+    element.style.animation = `${style.fadeOut} 0.5s forwards`;
+
+    setTimeout(() => {
+      nav("/product/all");
+    }, 500);
+  };
+
+  return (
+    <motion.div
+      onClick={handleClick}
+      className={style.container}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={pageTransition}
+      transition={{ duration: 0.5 }}
+    >
+      <Granim
+        id="granim"
+        states={{
+          "default-state": {
+            gradients: [
+              ["#FF1493", "#8A2BE2"], // 핫핑크에서 블루바이올렛
+              ["#8A2BE2", "#00CED1"], // 블루바이올렛에서 다크터콰이즈
+              ["#00CED1", "#FF69B4"], // 다크터콰이즈에서 핑크
+              ["#FF69B4", "#4169E1"], // 핑크에서 로열블루
+              ["#4169E1", "#FF1493"], // 로열블루에서 핫핑크
+            ],
+            transitionSpeed: 2000,
+            loop: true,
+          },
+        }}
+        direction="left-right" // or "diagonal" or "top-bottom" or "radial"
+        isPausedWhenNotInView={false}
+        stateTransitionSpeed={1500}
+        style={{
+          position: "absolute",
+          width: "1280px",
+          height: "800px",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+          zIndex: 0,
+        }}
+      />
+      <motion.div
+        className={style.content}
+        style={{
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        <motion.h1 className={style.icon} whileHover={{ scale: 1.1 }}>
+          <img src="idolmateLogo.png" alt="logo" />
+        </motion.h1>
+        <motion.div className={style.main_img} whileHover={{ scale: 1.05 }}>
+          <img src="main_image.png" alt="main_img" />
+        </motion.div>
+        <motion.p
+          className={style.subtitle}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          지금부터 최고의 세계를 보여줄게!
+        </motion.p>
+        <motion.p
+          className={style.touch}
+          animate={{
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+          }}
+        >
+          TOUCH HERE
+        </motion.p>
+      </motion.div>
+    </motion.div>
+  );
 }

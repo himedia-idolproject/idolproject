@@ -218,12 +218,6 @@ const initialState = {
       discount: 0.1,
       image: "image/blackpink/stationery/3.jpg",
     },
-    {
-      id: 2,
-      idolGroup: "BlackPink",
-      name: "Black Pink Calender",
-      category: "",
-    },
   ],
 };
 
