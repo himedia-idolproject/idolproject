@@ -6,6 +6,7 @@
   width: 1280px;
   height: 800px;
   border: 1px solid #000;
+  overflow: hidden;
   overflow-y: auto;
   padding-bottom: 40px;
 }
