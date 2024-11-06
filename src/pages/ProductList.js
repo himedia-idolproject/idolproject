@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -7,7 +6,6 @@ import "swiper/css/navigation";
 
 import "./productList.css";
 
-// import required modules
 import { Navigation } from "swiper/modules";
 import SwiperItem from "../components/SwiperItem";
 
