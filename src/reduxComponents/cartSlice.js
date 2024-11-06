@@ -12,6 +12,16 @@ const initialState = {
       image: "image/bts/accessory/1.jpg",
       quantity: 2,
     },
+    {
+      id: 2,
+      idolGroup: "BTS",
+      name: "BTS 스트랩 키링",
+      category: "accessory",
+      price: 12000,
+      discount: 0.1,
+      image: "image/bts/accessory/2.jpg",
+      quantity: 2,
+    },
   ],
   total: 0,
 };

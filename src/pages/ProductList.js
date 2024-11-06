@@ -10,7 +10,9 @@ import SwiperItem from "../components/SwiperItem";
 import { useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import "./productList.css";
-import { ShoppingCart, CreditCard } from "lucide-react";
+
+import Carts from "../components/Carts";
+
 
 export default function ProductList() {
   const { idolGroup } = useParams();
@@ -34,6 +36,7 @@ export default function ProductList() {
 
   return (
     <>
+      {/* <Carts /> */}
       <section>
         <h3>악세서리</h3>
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={4} spaceBetween={50}>
