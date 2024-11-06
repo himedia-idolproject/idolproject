@@ -60,12 +60,21 @@ export default function ProductDetail() {
             </select>
           </div>
           <p>
-            <span className={style["stringPrice"]}>가격</span>
-            <span className={style["originPrice"]}> {(selectedItem.price * quantity).toLocaleString()}</span>
-            <span className={style["price"]}>
-              {((selectedItem.price - selectedItem.price * selectedItem.discount) * quantity).toLocaleString()}
-            </span>{" "}
-            원
+            {selectedItem.discount === 0 ? (
+              <>
+                <span className={style["stringPrice"]}>가격</span>
+                <span className={style["price"]}>{(selectedItem.price * quantity).toLocaleString()}</span>
+              </>
+            ) : (
+              <>
+                <span className={style["stringPrice"]}>가격</span>
+                <span className={style["originPrice"]}>{(selectedItem.price * quantity).toLocaleString()}</span>
+                <span className={style["price"]}>
+                  {((selectedItem.price - selectedItem.price * selectedItem.discount) * quantity).toLocaleString()}
+                </span>{" "}
+                원
+              </>
+            )}
           </p>
         </div>
       </div>
