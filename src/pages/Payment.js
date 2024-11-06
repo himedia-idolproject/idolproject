@@ -14,7 +14,6 @@ export default function Payment() {
     <div className={style.container}>
       <div className={style.item_box}>
         <Items />
-        <Items />
       </div>
       <div className={style.box}>
         <div className={style.first}>
