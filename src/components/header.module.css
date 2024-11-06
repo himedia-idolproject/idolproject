@@ -1,7 +1,9 @@
 header {
   width: 100%;
   height: 96px;
-  background-color: #fbd2e7;
+
+  background-color: white;
+
   padding: 25px 100px;
   box-sizing: border-box;
 }
@@ -47,5 +49,7 @@ header {
   color: black;
 }
 .nav-link {
-  color: grey;
+
+  color: #868181;
+
 }
