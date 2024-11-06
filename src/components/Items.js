@@ -27,6 +27,8 @@ export default function Items() {
             </div>
             <p
               style={{
+                textAlign: "center",
+                maxWidth: "210px",
                 fontSize: "24px",
                 fontWeight: "bold",
                 display: "flex",

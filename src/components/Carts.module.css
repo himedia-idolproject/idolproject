@@ -81,9 +81,16 @@
 
 .xbtn {
   position: absolute;
-  left: 0;
+  left: 10px;
+  top: 10px;
   background-color: white;
-  z-index: 6;
+  z-index: 1001;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon {
@@ -118,8 +125,14 @@
   position: fixed;
   height: 800px;
   width: 700px;
-  right: 0;
-  z-index: 5;
+  right: -700px;
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.largeBox.open {
+  transform: translateX(-700px);
 }
 
 .total_box {
