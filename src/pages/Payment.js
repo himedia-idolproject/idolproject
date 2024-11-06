@@ -2,14 +2,17 @@ import React from "react";
 import style from "./Payment.module.css";
 import { Trash2 } from "lucide-react";
 import Items from "../components/Items";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from "../reduxComponents/cartSlice";
 
 export default function Payment() {
+  const { items, total } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const total_discount = items.reduce((sum, item) => sum + item.price * item.quantity * item.discount, 0);
+
   return (
     <div className={style.container}>
-      <div style={{ overflowY: "auto", paddingTop: "20px" }}>
-        <Items />
-        <Items />
-        <Items />
+      <div className={style.item_box}>
         <Items />
         <Items />
       </div>
@@ -19,18 +22,18 @@ export default function Payment() {
           <div className={style.price}>
             <div className={style.total}>
               <p>총 상품금액</p>
-              <p>100,000원</p>
+              <p>{total.toLocaleString()}원</p>
             </div>
             <div className={style.total}>
               <p>총 할인금액</p>
-              <p style={{ color: "#FF2626" }}>-0원</p>
+              <p style={{ color: "#FF2626" }}>-{total_discount.toLocaleString()}원</p>
             </div>
           </div>
         </div>
         <hr />
         <div className={style.total}>
           <h2>결제예상금액</h2>
-          <p style={{ fontSize: "32px", fontWeight: "bold" }}>100,000원</p>
+          <p style={{ fontSize: "32px", fontWeight: "bold" }}>{(total - total_discount).toLocaleString()}원</p>
         </div>
         <ul>
           <li>• 교환 및 반품은 수령 후 7일 이내로 접수하셔야합니다.</li>
@@ -43,7 +46,12 @@ export default function Payment() {
         </ul>
         <div className={style.btn}>
           <button className={style.pay}>결제</button>
-          <button className={style.delete}>
+          <button
+            className={style.delete}
+            onClick={() => {
+              dispatch(clearCart());
+            }}
+          >
             <Trash2 className={style.trash} />
           </button>
         </div>
