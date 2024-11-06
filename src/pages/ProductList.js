@@ -2,6 +2,9 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+
+import "./productList.css";
+
 import { Navigation } from "swiper/modules";
 import SwiperItem from "../components/SwiperItem";
 import { useSelector } from "react-redux";
@@ -16,40 +19,24 @@ export default function ProductList() {
   const navigate = useNavigate();
   const cartAmount = cartItems.length;
 
-  const accessories = products.filter(
-    (product) => product.category === "accessory"
-  );
-  const stationery = products.filter(
-    (product) => product.category === "stationery"
-  );
+  const accessories = products.filter((product) => product.category === "accessory");
+  const stationery = products.filter((product) => product.category === "stationery");
 
   const filteredAccessories =
     idolGroup && idolGroup !== "all"
-      ? accessories.filter(
-          (product) =>
-            product.idolGroup.toLowerCase() === idolGroup.toLowerCase()
-        )
+      ? accessories.filter((product) => product.idolGroup.toLowerCase() === idolGroup.toLowerCase())
       : accessories;
 
   const filteredStationery =
     idolGroup && idolGroup !== "all"
-      ? stationery.filter(
-          (product) =>
-            product.idolGroup.toLowerCase() === idolGroup.toLowerCase()
-        )
+      ? stationery.filter((product) => product.idolGroup.toLowerCase() === idolGroup.toLowerCase())
       : stationery;
 
   return (
     <>
       <section>
         <h3>악세서리</h3>
-        <Swiper
-          navigation={true}
-          modules={[Navigation]}
-          className="mySwiper"
-          slidesPerView={4}
-          spaceBetween={50}
-        >
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={4} spaceBetween={50}>
           {filteredAccessories.map((product) => (
             <SwiperSlide key={product.id}>
               <SwiperItem product={product} />
@@ -59,13 +46,7 @@ export default function ProductList() {
       </section>
       <section>
         <h3>문구/취미</h3>
-        <Swiper
-          navigation={true}
-          modules={[Navigation]}
-          className="mySwiper"
-          slidesPerView={4}
-          spaceBetween={50}
-        >
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={4} spaceBetween={50}>
           {filteredStationery.map((product) => (
             <SwiperSlide key={product.id}>
               <SwiperItem product={product} />

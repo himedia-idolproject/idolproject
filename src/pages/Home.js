@@ -1,8 +1,8 @@
+import { motion } from "framer-motion";
 import React from "react";
-import style from "./home.module.css";
 import Granim from "react-granim";
 import { useNavigate } from "react-router-dom";
-import { motion, transform } from "framer-motion";
+import style from "./home.module.css";
 
 export default function Home() {
   const nav = useNavigate();
@@ -47,17 +47,17 @@ export default function Home() {
         states={{
           "default-state": {
             gradients: [
-              ["#FF1493", "#8A2BE2"], // 핫핑크에서 블루바이올렛
-              ["#8A2BE2", "#00CED1"], // 블루바이올렛에서 다크터콰이즈
-              ["#00CED1", "#FF69B4"], // 다크터콰이즈에서 핑크
-              ["#FF69B4", "#4169E1"], // 핑크에서 로열블루
-              ["#4169E1", "#FF1493"], // 로열블루에서 핫핑크
+              ["#FF1493", "#8A2BE2"],
+              ["#8A2BE2", "#00CED1"],
+              ["#00CED1", "#FF69B4"],
+              ["#FF69B4", "#4169E1"],
+              ["#4169E1", "#FF1493"],
             ],
             transitionSpeed: 2000,
             loop: true,
           },
         }}
-        direction="left-right" // or "diagonal" or "top-bottom" or "radial"
+        direction="left-right"
         isPausedWhenNotInView={false}
         stateTransitionSpeed={1500}
         style={{

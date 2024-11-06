@@ -30,9 +30,7 @@ export default function ProductDetail() {
       name: selectedItem.name,
       quantity: quantity,
       price: selectedItem.price,
-      discountedPrice:
-        (selectedItem.price - selectedItem.price * selectedItem.discount) *
-        quantity,
+      discountedPrice: (selectedItem.price - selectedItem.price * selectedItem.discount) * quantity,
     };
 
     dispatch(addItem(item));
@@ -47,10 +45,7 @@ export default function ProductDetail() {
     <form className={style.containers} onSubmit={handleSubmit}>
       <div className={style["imageInfo-section"]}>
         <div className={style["image-section"]}>
-          <img
-            src={`${process.env.PUBLIC_URL}/${selectedItem.image}`}
-            alt={selectedItem.name}
-          />
+          <img src={`${process.env.PUBLIC_URL}/${selectedItem.image}`} alt={selectedItem.name} />
         </div>
         <div className={style["info-section"]}>
           <h1>{selectedItem.name}</h1>
@@ -102,11 +97,7 @@ export default function ProductDetail() {
         <button type="submit" className={style["add-button"]}>
           주문담기
         </button>
-        <button
-          type="button"
-          className={style["cancel-button"]}
-          onClick={() => navigate(-1)}
-        >
+        <button type="button" className={style["cancel-button"]} onClick={() => navigate(-1)}>
           취소
         </button>
       </div>
