@@ -14,14 +14,14 @@ export default function SwiperItem({ product }) {
     <div onClick={selectedItem} className={style.cartItem}>
       <img src={`${process.env.PUBLIC_URL}/${product.image}`} alt={product.name} />
       <strong>{product.name}</strong>
-      <span>
+      <span style={{ display: "flex", alignItems: "center" }}>
         {product.discount !== 0 ? (
           <>
             <s className={style["originPrice"]}>{product.price.toLocaleString()}</s>
             <em className={style["discountPrice"]}>{discountedPrice.toLocaleString()} 원</em>
           </>
         ) : (
-          <s>{product.price.toLocaleString()}</s>
+          <s>{product.price.toLocaleString()}원</s>
         )}
       </span>
     </div>
