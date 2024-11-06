@@ -5,12 +5,16 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import SwiperItem from "../components/SwiperItem";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./productList.css";
+import { ShoppingCart, CreditCard } from "lucide-react";
 
 export default function ProductList() {
-  const { idolGroup } = useParams(); // URL에서 아이돌 정보를 가져옴
+  const { idolGroup } = useParams();
   const products = useSelector((state) => state.products.products);
+  const cartItems = useSelector((state) => state.cart.items);
+  const navigate = useNavigate();
+  const cartAmount = cartItems.length;
 
   const accessories = products.filter(
     (product) => product.category === "accessory"
@@ -69,6 +73,16 @@ export default function ProductList() {
           ))}
         </Swiper>
       </section>
+      {cartAmount > 0 && (
+        <div className="buttonDiv">
+          <button className="topButton">
+            <span className="cartAmount">{cartAmount}</span> <ShoppingCart />{" "}
+          </button>
+          <button className="bottomButton" onClick={() => navigate("/payment")}>
+            <CreditCard />
+          </button>
+        </div>
+      )}
     </>
   );
 }

@@ -39,9 +39,10 @@ button {
 
 .image-section img {
   width: 300px;
-  height: auto;
+  height: 300px;
   border-radius: 8px;
   margin-bottom: 92px;
+  border: 2px solid #fad2b6;
 }
 
 /* 정보 섹션 */

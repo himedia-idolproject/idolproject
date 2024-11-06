@@ -6,9 +6,9 @@ import { addItem } from "../reduxComponents/cartSlice";
 
 export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
-  const { id } = useParams(); // URL에서 아이디 정보 가져오기
+  const { id } = useParams(); 
   const products = useSelector((state) => state.products.products);
-  const cartItems = useSelector((state) => state.cart.items); // 카트 아이템 가져오기
+  const cartItems = useSelector((state) => state.cart.items); 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -36,7 +36,7 @@ export default function ProductDetail() {
     };
 
     dispatch(addItem(item));
-    navigate(-1); // 이전 페이지로 이동
+    navigate(-1); 
   };
 
   if (!selectedItem) {
