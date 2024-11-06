@@ -10,21 +10,38 @@
 }
 
 .container {
-  width: 1280px;
-  height: 800px;
-  cursor: pointer;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid #000; */
-  z-index: 5;
+  justify-content: center;
+  gap: 2rem; /* 요소들 사이의 간격 */
 }
 
 .icon {
-  margin: 87px 0 58px;
+  margin: 0;
+}
+
+.icon img {
+  max-width: 200px; /* 로고 크기 조정이 필요하다면 이 값을 수정하세요 */
+  height: auto;
+}
+
+.main_img {
+  text-align: center;
+}
+
+.main_img img {
+  max-width: 100%;
+  height: auto;
 }
 
 p {
@@ -32,12 +49,15 @@ p {
 }
 
 .subtitle {
-  margin: 15px 0 43px;
-  color: #ababab;
+  font-size: 1.5rem;
+  margin: 0;
+  text-align: center;
 }
 
 .touch {
-  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+  text-align: center;
 }
 
 .page-exit {

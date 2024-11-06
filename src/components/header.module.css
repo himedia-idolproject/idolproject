@@ -1,7 +1,7 @@
 header {
   width: 100%;
   height: 96px;
-  background-color: #fbd2e780;
+  background-color: #fbd2e7;
   padding: 25px 100px;
   box-sizing: border-box;
 }
@@ -44,8 +44,8 @@ header {
   line-height: 46.34px;
 }
 .nav-linkActive {
-    color: black;
+  color: black;
 }
 .nav-link {
-    color: grey
+  color: grey;
 }
