@@ -28,10 +28,23 @@ style2.textContent = `
   }
   .swal-popup {
     padding: 2rem;
-    text-align: center; /* 텍스트 가운데 정렬 */
+    text-align: center;
+  }
+  .swal2-container {
+    padding: 0 !important;
+    overflow-y: auto !important;
+  }
+  .swal2-shown {
+    overflow-y: auto !important;
+    padding-right: 0 !important;
+  }
+  body.swal2-shown > :not(.swal2-container) {
+    filter: blur(10px);
+    pointer-events: none;
   }
   .swal2-html-container {
-    font-size: 1.2em; /* 폰트 크기 조정 */
+    font-size: 1em; /* 폰트 크기 조정 */
+    color: #FF7171;
   }
 `;
 document.head.appendChild(style2);
@@ -72,51 +85,10 @@ export default function Payment() {
       })
       .then((result) => {
         dispatch(clearCart());
-        customSwal.fire({
-          icon: "success",
-          title: "결제가 완료되었습니다.",
-          html: "2초 뒤에 홈 화면으로 이동합니다. <b></b> 초 남았습니다.",
-          allowOutsideClick: false,
-          scrollbarPadding: false,
-          width: "400px",
-          didOpen: () => {
-            const b = Swal.getHtmlContainer().querySelector("b");
-            let secondsLeft = 2;
-            b.textContent = secondsLeft;
-            timerInterval = setInterval(() => {
-              secondsLeft -= 1;
-              b.textContent = secondsLeft;
-              if (secondsLeft <= 0) {
-                clearInterval(timerInterval);
-                Swal.close(); // 모달 창 닫기
-                navigate("/");
-              }
-            }, 1000);
-          },
-        });
-      });
-  };
-
-  const handleDelete = () => {
-    let timerInterval;
-    customSwal
-      .fire({
-        icon: "warning",
-        title: "정말 삭제하시겠습니까?",
-        showCancelButton: true,
-        confirmButtonText: "삭제",
-        cancelButtonText: "취소",
-        confirmButtonColor: "#d33",
-        allowOutsideClick: false,
-        scrollbarPadding: false,
-        width: "400px",
-      })
-      .then((result) => {
-        if (result.isConfirmed) {
-          dispatch(clearCart());
-          customSwal.fire({
+        customSwal
+          .fire({
             icon: "success",
-            title: "삭제가 완료되었습니다.",
+            title: "결제가 완료되었습니다.",
             html: "2초 뒤에 홈 화면으로 이동합니다. <b></b> 초 남았습니다.",
             allowOutsideClick: false,
             scrollbarPadding: false,
@@ -130,12 +102,70 @@ export default function Payment() {
                 b.textContent = secondsLeft;
                 if (secondsLeft <= 0) {
                   clearInterval(timerInterval);
-                  Swal.close(); // 모달 창 닫기
+                  Swal.close();
                   navigate("/");
                 }
               }, 1000);
             },
+          })
+          .then((result) => {
+            if (result.isConfirmed) {
+              clearInterval(timerInterval);
+              Swal.close();
+              navigate("/");
+            }
           });
+      });
+  };
+
+  const handleDelete = () => {
+    let timerInterval;
+    customSwal
+      .fire({
+        icon: "warning",
+        title: "정말 삭제하시겠습니까?",
+        html: "<span style='font-size:1em; color:#FF7171;'>삭제시 되돌릴 수 없습니다.</span>",
+        showCancelButton: true,
+        confirmButtonText: "삭제",
+        cancelButtonText: "취소",
+        confirmButtonColor: "#d33",
+        allowOutsideClick: false,
+        scrollbarPadding: false,
+        width: "400px",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          dispatch(clearCart());
+          customSwal
+            .fire({
+              icon: "success",
+              title: "삭제가 완료되었습니다.",
+              html: "2초 뒤에 홈 화면으로 이동합니다. <b></b> 초 남았습니다.",
+              allowOutsideClick: false,
+              scrollbarPadding: false,
+              width: "400px",
+              didOpen: () => {
+                const b = Swal.getHtmlContainer().querySelector("b");
+                let secondsLeft = 2;
+                b.textContent = secondsLeft;
+                timerInterval = setInterval(() => {
+                  secondsLeft -= 1;
+                  b.textContent = secondsLeft;
+                  if (secondsLeft <= 0) {
+                    clearInterval(timerInterval);
+                    Swal.close(); // 모달 창 닫기
+                    navigate("/");
+                  }
+                }, 1000);
+              },
+            })
+            .then((result) => {
+              if (result.isConfirmed) {
+                clearInterval(timerInterval);
+                Swal.close();
+                navigate("/");
+              }
+            });
         }
       });
   };
