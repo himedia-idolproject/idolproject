@@ -58,7 +58,7 @@ const initialState = {
     },
     {
       id: 7,
-      idolGroup: "뉴진스",
+      idolGroup: "NewJeans",
       name: "NewJeans Get Up 아크릴 스마트톡",
       category: "accessory",
       price: 28000,
@@ -67,8 +67,8 @@ const initialState = {
     },
     {
       id: 8,
-      idolGroup: "뉴진스",
-      name: "파워퍼프걸 뉴진스 그립톡",
+      idolGroup: "NewJeans",
+      name: "파워퍼프걸 NewJeans 그립톡",
       category: "accessory",
       price: 13000,
       discount: 0,
@@ -76,8 +76,8 @@ const initialState = {
     },
     {
       id: 9,
-      idolGroup: "뉴진스",
-      name: "뉴진스키링 수제 뉴진스토끼 굿즈 OMG 5종세트 newjeans 민지 해린 하니",
+      idolGroup: "NewJeans",
+      name: "NewJeans키링 수제 NewJeans토끼 굿즈 OMG 5종세트 newjeans 민지 해린 하니",
       category: "accessory",
       price: 20000,
       discount: 0,
@@ -85,8 +85,8 @@ const initialState = {
     },
     {
       id: 10,
-      idolGroup: "뉴진스",
-      name: "뉴진스 응원봉",
+      idolGroup: "NewJeans",
+      name: "NewJeans 응원봉",
       category: "stationery",
       price: 64000,
       discount: 0.1,
@@ -94,8 +94,8 @@ const initialState = {
     },
     {
       id: 11,
-      idolGroup: "뉴진스",
-      name: "뉴진스 다이어리",
+      idolGroup: "NewJeans",
+      name: "NewJeans 다이어리",
       category: "stationery",
       price: 45000,
       discount: 0.1,
@@ -103,8 +103,8 @@ const initialState = {
     },
     {
       id: 12,
-      idolGroup: "뉴진스",
-      name: "뉴진스 스티커",
+      idolGroup: "NewJeans",
+      name: "NewJeans 스티커",
       category: "stationery",
       price: 13000,
       discount: 0.1,
@@ -112,7 +112,7 @@ const initialState = {
     },
     {
       id: 13,
-      idolGroup: "세븐틴",
+      idolGroup: "Seventeen",
       name: "LENTICUALR ACRYLIC STAND ('17 IS RIGHT HERE')",
       category: "accessory",
       price: 13000,
@@ -121,7 +121,7 @@ const initialState = {
     },
     {
       id: 14,
-      idolGroup: "세븐틴",
+      idolGroup: "Seventeen",
       name: "LENTICUALR PHONETAB ('17 IS RIGHT HERE')",
       category: "accessory",
       price: 13000,
@@ -130,7 +130,7 @@ const initialState = {
     },
     {
       id: 15,
-      idolGroup: "세븐틴",
+      idolGroup: "Seventeen",
       name: "SEVENTEEN Mini Cube Keyring (17 RIGHT HERE)",
       category: "accessory",
       price: 15000,
@@ -139,7 +139,7 @@ const initialState = {
     },
     {
       id: 16,
-      idolGroup: "세븐틴",
+      idolGroup: "Seventeen",
       name: "LENTICUALR MINI CARD & BINDER ('17 IS RIGHT HERE')",
       category: "stationery",
       price: 40000,
@@ -148,7 +148,7 @@ const initialState = {
     },
     {
       id: 17,
-      idolGroup: "세븐틴",
+      idolGroup: "Seventeen",
       name: "Seventeen official Light Stick Carat Bong",
       category: "stationery",
       price: 80000,
@@ -157,7 +157,7 @@ const initialState = {
     },
     {
       id: 18,
-      idolGroup: "세븐틴",
+      idolGroup: "Seventeen",
       name: "Seventeen official sticker",
       category: "stationery",
       price: 15000,
@@ -166,7 +166,7 @@ const initialState = {
     },
     {
       id: 19,
-      idolGroup: "블랙핑크",
+      idolGroup: "BlackPink",
       name: "BPAirPodCase",
       category: "accessory",
       price: 30000,
@@ -175,7 +175,7 @@ const initialState = {
     },
     {
       id: 20,
-      idolGroup: "블랙핑크",
+      idolGroup: "BlackPink",
       name: "BPCase",
       category: "accessory",
       price: 18000,
@@ -184,7 +184,7 @@ const initialState = {
     },
     {
       id: 21,
-      idolGroup: "블랙핑크",
+      idolGroup: "BlackPink",
       name: "BPGripToc",
       category: "accessory",
       price: 10000,
@@ -193,7 +193,7 @@ const initialState = {
     },
     {
       id: 22,
-      idolGroup: "블랙핑크",
+      idolGroup: "BlackPink",
       name: "BP_Calender",
       category: "stationery",
       price: 21000,
@@ -202,7 +202,7 @@ const initialState = {
     },
     {
       id: 23,
-      idolGroup: "블랙핑크",
+      idolGroup: "BlackPink",
       name: "BPSlingBag",
       category: "stationery",
       price: 33000,
@@ -211,7 +211,7 @@ const initialState = {
     },
     {
       id: 24,
-      idolGroup: "블랙핑크",
+      idolGroup: "BlackPink",
       name: "BPTheGamePhotoCard",
       category: "stationery",
       price: 8000,
