@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+  font-family: "Noto Sans KR";
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 232.75px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: 3px solid rgb(255, 181, 255);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 150px;
+  color: #222;
+}
+
+.swiper-button-next {
+}
+
+h3 {
+  font-size: 24px;
+  text-decoration: underline;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+strong {
+  font-size: 20px;
+}
+s {
+  font-weight: normal;
+  font-size: 16px;
+}
+em {
+  font-style: normal;
+  font-size: 16px;
+  color: #ff2626;
+}
+span {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 90px 0;
+}
+
+.swiper-slide > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.buttonDiv {
+  position: sticky; /* Sticky position to follow scrolling */
+  left: 1200px;
+  width: 80px;
+  bottom: 30px; /* Distance from the bottom edge */
+  z-index: 1000; /* Ensure it stays on top of other content */
+  padding: 10px; /* Optional: Add padding for button spacing */
+
+  /* Optional styles for visibility */
+
+  border-radius: 10px;
+}
+
+.topButton {
+  border: 1px solid black;
+  border-radius: 10px 10px 0 0;
+  height: 60px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+}
+
+.bottomButton {
+  border: 1px solid black;
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+}
+
+.cartAmount {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  background-color: #eee;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  right: 18px;
+  top: 15px;
+}

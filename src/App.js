@@ -1,29 +1,30 @@
+import { AnimatePresence } from "framer-motion";
 import { Provider } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Order from "./pages/Order";
 import Payment from "./pages/Payment";
-import ProductList from "./pages/ProductList";
 import ProductDetail from "./pages/ProductDetail";
+import ProductList from "./pages/ProductList";
 import store from "./reduxComponents/store";
 
 function App() {
+  const location = useLocation();
+
   return (
-    <>
-      <Provider store={store}>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/product/:idolGroup" element={<ProductList />}></Route>
-            <Route path="/product/:idolGroup/:id" element={<ProductDetail />}></Route>
-            <Route path="/order" element={<Order />}></Route>
-            <Route path="/payment" element={<Payment />}></Route>
+    <Provider store={store}>
+      <Layout>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:idolGroup" element={<ProductList />} />
+            <Route path="/product/:idolGroup/:id" element={<ProductDetail />} />
+            <Route path="/payment" element={<Payment />} />
           </Routes>
-        </Layout>
-      </Provider>
-    </>
+        </AnimatePresence>
+      </Layout>
+    </Provider>
   );
 }
 

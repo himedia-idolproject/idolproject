@@ -1,7 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: [],
+  items: [
+    {
+      id: 1,
+      idolGroup: "BTS",
+      name: "BTS 스트랩 키링",
+      category: "accessory",
+      price: 12000,
+      discount: 0.1,
+      image: "image/bts/accessory/1.jpg",
+      quantity: 2,
+    },
+  ],
   total: 0,
 };
 // quantity는 필요한 컴포넌트에서 useState로 생성하여서 넘기는걸로
