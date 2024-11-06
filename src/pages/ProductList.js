@@ -7,6 +7,7 @@ import SwiperItem from "../components/SwiperItem";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import "./productList.css";
+import Carts from "../components/Carts";
 
 export default function ProductList() {
   const { idolGroup } = useParams(); // URL에서 아이돌 정보를 가져옴
@@ -37,6 +38,7 @@ export default function ProductList() {
 
   return (
     <>
+      {/* <Carts /> */}
       <section>
         <h3>악세서리</h3>
         <Swiper
