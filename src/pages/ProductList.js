@@ -2,9 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-
 import "./productList.css";
-
 import { Navigation } from "swiper/modules";
 import SwiperItem from "../components/SwiperItem";
 import { useSelector } from "react-redux";
