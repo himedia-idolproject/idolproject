@@ -3,13 +3,15 @@
   width: 100%;
   height: 800px;
   gap: 65.8px;
+  /* position: relative; */
 }
 
-.itemsContainer {
-  flex: 1;
-  height: 800px;
+.item_box {
   overflow-y: auto;
   padding-top: 20px;
+  height: 100%;
+  padding-bottom: 100px;
+  /* height: calc(100vh + 100px); */
 }
 
 .box {
@@ -18,6 +20,15 @@
   gap: 41px;
   max-width: 447px;
   padding-top: 60px;
+  position: fixed;
+  right: 75px;
+}
+
+.itemsContainer {
+  flex: 1;
+  height: 800px;
+  overflow-y: auto;
+  padding-top: 20px;
 }
 
 .first {
@@ -53,14 +64,15 @@ p {
 .pay {
   width: 283px;
   height: 100px;
-  background-color: #fce8f2;
+  background-color: hotpink;
   border-radius: 15px;
-  border: 1px solid #000;
+  /* border: 1px solid #fce8f2; */
   font-size: 32px;
+  color: #fce8f2;
 }
 
 .delete {
-  border: 1px solid #000;
+  border: 1px solid hotpink;
   padding: 10px;
   border-radius: 15px;
   width: 100px;
@@ -68,6 +80,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fce8f2;
 }
 
 li {
@@ -90,4 +103,5 @@ li {
   width: 70px;
   height: 70px;
   stroke-width: 0.8;
+  color: hotpink;
 }
