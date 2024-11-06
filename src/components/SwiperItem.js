@@ -20,13 +20,13 @@ export default function SwiperItem({ product }) {
       <span>
         {product.discount !== 0 ? (
           <>
-            <s className={style["priceTag"]}>
+            <s className={style["originPrice"]}>
               {product.price.toLocaleString()}
             </s>
-            <em>{discountedPrice.toLocaleString()}</em>
+            <em className={style["discountPrice"]}>{discountedPrice.toLocaleString()} 원</em>
           </>
         ) : (
-          <s>{product.price.toLocaleString()}</s>
+          <s className={style["priceTag"]}>{product.price.toLocaleString()} 원</s>
         )}
       </span>
     </div>
