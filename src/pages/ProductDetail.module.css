@@ -4,9 +4,9 @@
   width: 100%;
   align-items: center;
   padding: 20px;
-  background-color: #f3f3f3;
+  /* background-color: #f3f3f3; */
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   max-width: 1900px;
   max-height: 2000px;
   margin: 0px auto;
@@ -27,24 +27,29 @@ button {
   justify-content: space-between;
 }
 
-/* 이미지 섹션 */
 .image-section {
   margin-top: 92px;
-  margin-right: 175px;
-  margin-bottom: 20px; /* 이미지와 정보 섹션 간의 간격 */
+  /* margin-right: 175px; */
+  margin-bottom: 20px;
   margin-left: 221px;
   text-align: left;
+  width: 300px;
+  height: 300px;
+  vertical-align: top;
+  border-radius: 8px;
+  margin-bottom: 92px;
+  border: 2px solid rgb(255, 181, 255);
+
+  overflow: hidden;
+  display: flex;
 }
 
 .image-section img {
   width: 300px;
   height: 300px;
-  border-radius: 8px;
   margin-bottom: 92px;
-  border: 2px solid #fad2b6;
 }
 
-/* 정보 섹션 */
 .info-section {
   display: flex;
   flex-direction: column;
@@ -65,11 +70,12 @@ button {
   margin-bottom: 10px;
   color: #333;
   margin-bottom: 56px;
+  max-width: 300px;
 }
 .quantity {
   margin-bottom: 66px;
 }
-/* 수량 선택 */
+
 .info-section label {
   font-size: 18px;
   margin-right: 10px;
@@ -82,9 +88,11 @@ button {
   margin-top: 66px;
   margin-bottom: 10px;
   line-height: 28.96px;
+  width: 320px;
+  justify-content: space-between;
 }
 .addQuantity {
-  padding-left: 80px;
+  padding-left: 90px;
   width: 200px;
   height: 40px;
   justify-items: space-between;
@@ -104,7 +112,6 @@ button {
   margin-left: 35px;
 }
 
-/* 버튼 섹션 */
 .button-section {
   display: flex;
   justify-content: space-between;
@@ -120,10 +127,11 @@ button {
   left: 296px;
   padding: 27px 0px 27px 0px;
   gap: 0px;
+  font-size: 25px;
 }
 
 .button-section button:hover {
-  background-color: #fcc6a0;
+  background-color: rgb(255, 181, 255);
 }
 
 .add-button {

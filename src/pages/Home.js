@@ -1,11 +1,12 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import React from "react";
 import Granim from "react-granim";
 import { useNavigate } from "react-router-dom";
 import style from "./home.module.css";
 
 export default function Home() {
   const nav = useNavigate();
+  const [isNavigating, setIsNavigating] = useState(false);
 
   const pageTransition = {
     initial: {
@@ -23,12 +24,12 @@ export default function Home() {
   };
 
   const handleClick = () => {
-    const element = document.querySelector(`.${style.container}`);
-    element.style.animation = `${style.fadeOut} 0.5s forwards`;
 
-    setTimeout(() => {
+    if (!isNavigating) {
+      setIsNavigating(true);
+
       nav("/product/all");
-    }, 500);
+    }
   };
 
   return (

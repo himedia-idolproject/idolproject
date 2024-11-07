@@ -1,19 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: [
-    {
-      id: 1,
-      idolGroup: "BTS",
-      name: "BTS 스트랩 키링",
-      category: "accessory",
-      price: 12000,
-      discount: 0.1,
-      image: "image/bts/accessory/1.jpg",
-      quantity: 2,
-    },
-  ],
+  items: [],
   total: 0,
+  isCartOpen: false,
 };
 // quantity는 필요한 컴포넌트에서 useState로 생성하여서 넘기는걸로
 const cartSlice = createSlice({
@@ -51,6 +41,10 @@ const cartSlice = createSlice({
       state.total = state.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
     },
 
+    toggleCart: (state) => {
+      state.isCartOpen = !state.isCartOpen;
+    },
+
     clearCart: (state) => {
       state.items = [];
       state.total = 0;
@@ -58,6 +52,8 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItem, updateQuantity, removeItem, clearCart } = cartSlice.actions;
+
+export const { addItem, updateQuantity, removeItem, clearCart, toggleCart } = cartSlice.actions;
+
 
 export default cartSlice.reducer;
