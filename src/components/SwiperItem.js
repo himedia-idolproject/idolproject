@@ -17,7 +17,9 @@ export default function SwiperItem({ product }) {
       <span style={{ display: "flex", alignItems: "center" }}>
         {product.discount !== 0 ? (
           <>
-            <s className={style["originPrice"]}>{product.price.toLocaleString()}</s>
+            <s className={style["originPrice"]}>
+              {product.price.toLocaleString()}
+            </s>
             <em className={style["discountPrice"]}>{discountedPrice.toLocaleString()} 원</em>
           </>
         ) : (
