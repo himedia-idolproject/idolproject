@@ -15,44 +15,23 @@ function App() {
 
   return (
     <Provider store={store}>
-      <Layout>
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route
-              path="/"
-              element={
-                <PageTransitionLayout>
-                  <Home />
-                </PageTransitionLayout>
-              }
-            />
-            <Route
-              path="/product/:idolGroup"
-              element={
-                <PageTransitionLayout>
-                  <ProductList />
-                </PageTransitionLayout>
-              }
-            />
-            <Route
-              path="/product/:idolGroup/:id"
-              element={
-                <PageTransitionLayout>
-                  <ProductDetail />
-                </PageTransitionLayout>
-              }
-            />
-            <Route
-              path="/payment"
-              element={
-                <PageTransitionLayout>
-                  <Payment />
-                </PageTransitionLayout>
-              }
-            />
-          </Routes>
-        </AnimatePresence>
-      </Layout>
+      <AnimatePresence mode="wait" initial={false}>
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
+              <PageTransitionLayout>
+                <Home />
+              </PageTransitionLayout>
+            }
+          />
+          <Route path="/product/" element={<Layout />}>
+            <Route path=":idolGroup" element={<ProductList />} />
+            <Route path=":idolGroup/:id" element={<ProductDetail />} />
+            <Route path="payment" element={<Payment />} />
+          </Route>
+        </Routes>
+      </AnimatePresence>
     </Provider>
   );
 }

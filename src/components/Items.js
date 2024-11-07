@@ -23,7 +23,7 @@ export default function Items() {
         <div key={item.id} className={style.box}>
           <div className={style.com}>
             <div className={style.bigBox}>
-              <img className={style.img_item} src={item.image} />
+              <img className={style.img_item} src={`${process.env.PUBLIC_URL}/${item.image}`} />
             </div>
             <p
               style={{

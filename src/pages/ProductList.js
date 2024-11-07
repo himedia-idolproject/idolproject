@@ -67,7 +67,7 @@ export default function ProductList() {
             <span className="cartAmount">{cartAmount}</span>
             <ShoppingCart />{" "}
           </button>
-          <button className="bottomButton" onClick={() => navigate("/payment")}>
+          <button className="bottomButton" onClick={() => navigate("/product/payment")}>
             <CreditCard />
           </button>
         </div>
