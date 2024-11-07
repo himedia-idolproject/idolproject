@@ -8,7 +8,7 @@ export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
   const products = useSelector((state) => state.products.products);
-  const cartItems = useSelector((state) => state.cart.items);
+  // const cartItems = useSelector((state) => state.cart.items);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -17,15 +17,7 @@ export default function ProductDetail() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const item = {
-      id: selectedItem.id,
-      name: selectedItem.name,
-      quantity: quantity,
-      price: selectedItem.price,
-      discountedPrice:
-        (selectedItem.price - selectedItem.price * selectedItem.discount) *
-        quantity,
-    };
+    const item = { ...selectedItem, quantity: quantity };
 
     dispatch(addItem(item));
     navigate(-1);
@@ -67,14 +59,22 @@ export default function ProductDetail() {
             {selectedItem.discount === 0 ? (
               <>
                 <span className={style["stringPrice"]}>가격</span>
-                <span className={style["price"]}>{(selectedItem.price * quantity).toLocaleString()}</span>
+                <span className={style["price"]}>
+                  {(selectedItem.price * quantity).toLocaleString()}
+                </span>
               </>
             ) : (
               <>
                 <span className={style["stringPrice"]}>가격</span>
-                <span className={style["originPrice"]}>{(selectedItem.price * quantity).toLocaleString()}</span>
+                <span className={style["originPrice"]}>
+                  {(selectedItem.price * quantity).toLocaleString()}
+                </span>
                 <span className={style["price"]}>
-                  {((selectedItem.price - selectedItem.price * selectedItem.discount) * quantity).toLocaleString()}
+                  {(
+                    (selectedItem.price -
+                      selectedItem.price * selectedItem.discount) *
+                    quantity
+                  ).toLocaleString()}
                 </span>{" "}
                 원
               </>
