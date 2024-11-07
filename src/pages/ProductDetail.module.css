@@ -35,18 +35,19 @@ button {
   text-align: left;
   width: 300px;
   height: 300px;
+  vertical-align: top;
   border-radius: 8px;
   margin-bottom: 92px;
-  border: 2px solid #fad2b6;
+  border: 2px solid rgb(255, 181, 255);
+
   overflow: hidden;
+  display: flex;
 }
 
 .image-section img {
   width: 300px;
   height: 300px;
-  /* border-radius: 8px; */
   margin-bottom: 92px;
-  /* border: 2px solid #fad2b6; */
 }
 
 .info-section {
@@ -69,6 +70,7 @@ button {
   margin-bottom: 10px;
   color: #333;
   margin-bottom: 56px;
+  max-width: 300px;
 }
 .quantity {
   margin-bottom: 66px;
