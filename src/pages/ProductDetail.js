@@ -8,6 +8,7 @@ export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
   const products = useSelector((state) => state.products.products);
+  const cartItems = useSelector((state) => state.cart.items);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -16,7 +17,16 @@ export default function ProductDetail() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const item = { ...selectedItem, quantity: quantity };
+    const item = {
+      id: selectedItem.id,
+      name: selectedItem.name,
+      quantity: quantity,
+      price: selectedItem.price,
+      discountedPrice:
+        (selectedItem.price - selectedItem.price * selectedItem.discount) *
+        quantity,
+    };
+
     dispatch(addItem(item));
     navigate(-1);
   };
@@ -29,7 +39,10 @@ export default function ProductDetail() {
     <form className={style.containers} onSubmit={handleSubmit}>
       <div className={style["imageInfo-section"]}>
         <div className={style["image-section"]}>
-          <img src={`${process.env.PUBLIC_URL}/${selectedItem.image}`} alt={selectedItem.name} />
+          <img
+            src={`${process.env.PUBLIC_URL}/${selectedItem.image}`}
+            alt={selectedItem.name}
+          />
         </div>
         <div className={style["info-section"]}>
           <h1>{selectedItem.name}</h1>
@@ -73,7 +86,11 @@ export default function ProductDetail() {
         <button type="submit" className={style["add-button"]}>
           주문담기
         </button>
-        <button type="button" className={style["cancel-button"]} onClick={() => navigate(-1)}>
+        <button
+          type="button"
+          className={style["cancel-button"]}
+          onClick={() => navigate(-1)}
+        >
           취소
         </button>
       </div>
