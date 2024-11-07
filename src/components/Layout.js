@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
-import Home from "../pages/Home";
+import { Outlet, useLocation } from "react-router-dom";
+import { toggleCart } from "../reduxComponents/cartSlice";
 import Carts from "./Carts";
 import Header from "./Header";
 import style from "./layout.module.css";
-import { toggleCart } from "../reduxComponents/cartSlice";
+import PageTransitionLayout from "./PageTransitionLayout";
 
-export default function Layout({ children }) {
+export default function Layout() {
   const location = useLocation();
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
   const isPaymentPage = location.pathname === "/payment";
@@ -22,9 +22,7 @@ export default function Layout({ children }) {
 
   const containerClass = `${style.container} ${isPaymentPage || isCartOpen ? style.noOverflow : style.overflowY}`;
 
-  return location.pathname === "/" ? (
-    <Home />
-  ) : (
+  return (
     <div className={containerClass} ref={containerRef}>
       <Carts className={style.cartList} />
       {isCartOpen && (
@@ -38,8 +36,9 @@ export default function Layout({ children }) {
       <header className={style.header}>
         <Header />
       </header>
-
-      <main>{children}</main>
+      <PageTransitionLayout>
+        <Outlet />
+      </PageTransitionLayout>
     </div>
   );
 }

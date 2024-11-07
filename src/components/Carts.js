@@ -2,11 +2,7 @@ import React from "react";
 import { Trash2, X, Plus, Minus } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./Carts.module.css";
-import {
-  clearCart,
-  updateQuantity,
-  toggleCart,
-} from "../reduxComponents/cartSlice";
+import { clearCart, updateQuantity, toggleCart } from "../reduxComponents/cartSlice";
 
 export default function Carts() {
   const items = useSelector((state) => state.cart.items);
@@ -63,30 +59,18 @@ export default function Carts() {
                       <Plus className={style.icon} />
                     </button>
                   ) : (
-                    <button
-                      className={style.moveBtn}
-                      onClick={() => handleQuantity(item.id, 1)}
-                    >
+                    <button className={style.moveBtn} onClick={() => handleQuantity(item.id, 1)}>
                       <Plus className={style.icon} />
                     </button>
                   )}
 
-                  <button
-                    className={style.moveBtn}
-                    onClick={() => handleQuantity(item.id, -1)}
-                  >
+                  <button className={style.moveBtn} onClick={() => handleQuantity(item.id, -1)}>
                     <Minus className={style.icon} />
                   </button>
                 </div>
                 <p className={style.pName}>수량 {item.quantity}개</p>
                 <p className={style.pName}>
-                  가격{" "}
-                  {(
-                    item.price *
-                    item.quantity *
-                    (1 - item.discount)
-                  ).toLocaleString()}
-                  원
+                  가격 {(item.price * item.quantity * (1 - item.discount)).toLocaleString()}원
                 </p>
               </div>
             </div>
@@ -97,14 +81,7 @@ export default function Carts() {
         <p className={style.name}>총 가격 </p>
         <p className={style.total_price}>
           &nbsp;&nbsp;
-          {items
-            .reduce(
-              (sum, item) =>
-                sum + item.price * item.quantity * (1 - item.discount),
-              0
-            )
-            .toLocaleString()}
-          원
+          {items.reduce((sum, item) => sum + item.price * item.quantity * (1 - item.discount), 0).toLocaleString()}원
         </p>
         <div className={style.btn}>
           <button
