@@ -54,7 +54,9 @@ export default function Items() {
                 </button>
               </div>
               <p className={style.pName}>수량 {item.quantity}개</p>
-              <p className={style.pName}>가격 {item.price * item.quantity * (1 - item.discount)}원</p>
+              <p className={style.pName}>
+                가격 {(item.price * item.quantity * (1 - item.discount)).toLocaleString()}원
+              </p>
             </div>
           </div>
         </div>
