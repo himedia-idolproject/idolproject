@@ -42,25 +42,17 @@ export default function Items() {
                     <Plus className={style.icon} />
                   </button>
                 ) : (
-                  <button
-                    className={style.moveBtn}
-                    onClick={() => handleQuantity(item.id, 1)}
-                  >
+                  <button className={style.moveBtn} onClick={() => handleQuantity(item.id, 1)}>
                     <Plus className={style.icon} />
                   </button>
                 )}
 
-                <button
-                  className={style.moveBtn}
-                  onClick={() => handleQuantity(item.id, -1)}
-                >
+                <button className={style.moveBtn} onClick={() => handleQuantity(item.id, -1)}>
                   <Minus className={style.icon} />
                 </button>
               </div>
               <p className={style.pName}>수량 {item.quantity}개</p>
-              <p className={style.pName}>
-                가격 {item.price * item.quantity * (1 - item.discount)}원
-              </p>
+              <p className={style.pName}>가격 {item.price * item.quantity * (1 - item.discount)}원</p>
             </div>
           </div>
         </div>

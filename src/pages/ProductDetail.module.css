@@ -1,7 +1,6 @@
-/* 전체 컨테이너 */
 .containers {
   display: flex;
-  flex-direction: column; /* 세로 방향 배치 */
+  flex-direction: column;
   width: 100%;
   align-items: center;
   padding: 20px;
@@ -39,9 +38,10 @@ button {
 
 .image-section img {
   width: 300px;
-  height: auto;
+  height: 300px;
   border-radius: 8px;
   margin-bottom: 92px;
+  border: 2px solid #fad2b6;
 }
 
 /* 정보 섹션 */
