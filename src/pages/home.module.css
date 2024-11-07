@@ -31,7 +31,7 @@
 }
 
 .icon img {
-  max-width: 200px;
+  max-width: 12.5rem;
   height: auto;
 }
 
@@ -45,14 +45,15 @@
 }
 
 p {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .subtitle {
+  color: #fff;
   font-size: 1.5rem;
   margin: 0;
   text-align: center;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .touch {

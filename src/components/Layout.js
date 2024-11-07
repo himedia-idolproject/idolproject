@@ -20,14 +20,19 @@ export default function Layout() {
     }
   }, [isCartOpen]);
 
-  const containerClass = `${style.container} ${
-    isPaymentPage || isCartOpen ? style.noOverflow : style.overflowY
-  }`;
+  const containerClass = `${style.container} ${isPaymentPage || isCartOpen ? style.noOverflow : style.overflowY}`;
 
   return (
     <div className={containerClass} ref={containerRef}>
       <Carts className={style.cartList} />
-      {isCartOpen && <div className={style.overlay} onClick={() => {}}></div>}
+      {isCartOpen && (
+        <div
+          className={style.overlay}
+          onClick={() => {
+            dispatch(toggleCart());
+          }}
+        ></div>
+      )}
       <header className={style.header}>
         <Header />
       </header>

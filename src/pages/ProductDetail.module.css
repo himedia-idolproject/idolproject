@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
-  padding: 20px;
+  padding: 1.25rem;
   /* background-color: #f3f3f3; */
   border-radius: 10px;
   /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
@@ -28,16 +28,16 @@ button {
 }
 
 .image-section {
-  margin-top: 92px;
+  margin-top: 5.75rem;
   /* margin-right: 175px; */
-  margin-bottom: 20px;
-  margin-left: 221px;
+  margin-bottom: 1.25rem;
+  margin-left: 13.8125rem;
   text-align: left;
-  width: 300px;
-  height: 300px;
+  width: 18.75rem;
+  height: 18.75rem;
   vertical-align: top;
   border-radius: 8px;
-  margin-bottom: 92px;
+  margin-bottom: 5.75rem;
   border: 2px solid rgb(255, 181, 255);
 
   overflow: hidden;
@@ -45,9 +45,9 @@ button {
 }
 
 .image-section img {
-  width: 300px;
-  height: 300px;
-  margin-bottom: 92px;
+  width: 18.75rem;
+  height: 18.75rem;
+  margin-bottom: 5.75rem;
 }
 
 .info-section {
@@ -55,61 +55,61 @@ button {
   flex-direction: column;
   align-items: center;
   text-align: left;
-  margin-top: 105px;
-  margin-bottom: 117px;
-  margin-right: 280px;
+  margin-top: 6.5625rem;
+  margin-bottom: 7.3125rem;
+  margin-right: 17.5rem;
 }
 
 .info-section h1 {
   display: inline-block;
   text-align: center;
-  width: 400px;
+  width: 25rem;
   height: auto;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   color: #333;
-  margin-bottom: 56px;
+  margin-bottom: 3.5rem;
   max-width: 300px;
 }
 .quantity {
-  margin-bottom: 66px;
+  margin-bottom: 4.125rem;
 }
 
 .info-section label {
-  font-size: 18px;
-  margin-right: 10px;
+  font-size: 1.125rem;
+  margin-right: 0.625rem;
 }
 
 .info-section p {
   display: flex;
   align-items: center;
-  font-size: 20px;
-  margin-top: 66px;
-  margin-bottom: 10px;
-  line-height: 28.96px;
-  width: 320px;
+  font-size: 1.25rem;
+  margin-top: 4.125rem;
+  margin-bottom: 0.625rem;
+  line-height: 1.81rem;
+  width: 20rem;
   justify-content: space-between;
 }
 .addQuantity {
-  padding-left: 90px;
-  width: 200px;
-  height: 40px;
+  padding-left: 5.625rem;
+  width: 12.5rem;
+  height: 2.5rem;
   justify-items: space-between;
   font-size: large;
   border-radius: 10px;
 }
 .stringPrice {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 .originPrice {
   text-decoration-line: line-through;
-  margin-left: 20px;
+  margin-left: 1.5rem;
   color: #333;
 }
 .price {
-  font-size: 32px;
-  margin-left: 35px;
+  font-size: 2rem;
+  margin-left: 2.1875rem;
 }
 
 .button-section {
@@ -135,13 +135,13 @@ button {
 }
 
 .add-button {
-  width: 400px;
+  width: 40.625rem;
   border: 1px solid black;
 }
 .cancel-button {
-  width: 250px;
-  height: 100px;
-  padding: 27px 0px 27px 0px;
+  width: 15.625rem;
+  height: 6.25rem;
+  padding: 1.6875rem 0px 1.6875rem 0px;
   gap: 0px;
   border: 1px solid black;
 }
