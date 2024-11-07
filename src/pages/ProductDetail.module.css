@@ -27,11 +27,10 @@ button {
   justify-content: space-between;
 }
 
-/* 이미지 섹션 */
 .image-section {
   margin-top: 92px;
   margin-right: 175px;
-  margin-bottom: 20px; /* 이미지와 정보 섹션 간의 간격 */
+  margin-bottom: 20px;
   margin-left: 221px;
   text-align: left;
 }
@@ -44,7 +43,6 @@ button {
   border: 2px solid #fad2b6;
 }
 
-/* 정보 섹션 */
 .info-section {
   display: flex;
   flex-direction: column;
@@ -69,7 +67,7 @@ button {
 .quantity {
   margin-bottom: 66px;
 }
-/* 수량 선택 */
+
 .info-section label {
   font-size: 18px;
   margin-right: 10px;
@@ -104,7 +102,6 @@ button {
   margin-left: 35px;
 }
 
-/* 버튼 섹션 */
 .button-section {
   display: flex;
   justify-content: space-between;
@@ -120,10 +117,11 @@ button {
   left: 296px;
   padding: 27px 0px 27px 0px;
   gap: 0px;
+  transition: all 0.3s;
 }
 
 .button-section button:hover {
-  background-color: #fcc6a0;
+  background-color: rgb(255, 181, 255);
 }
 
 .add-button {

@@ -22,11 +22,37 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000; /* 뷰포트 바깥 영역의 색상 */
+  background-color: #000;
   overflow: hidden;
 }
 
 #root {
   width: 100%;
   height: 100%;
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+  box-shadow: inset 0 0 5px grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  border-radius: 6px;
+  box-shadow: inset 0 0 5px grey;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
 }
