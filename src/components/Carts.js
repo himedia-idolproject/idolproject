@@ -2,10 +2,11 @@ import React from "react";
 import { Trash2, X, Plus, Minus } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./Carts.module.css";
-import { clearCart, updateQuantity } from "../reduxComponents/cartSlice";
+import { clearCart, updateQuantity, toggleCart } from "../reduxComponents/cartSlice";
 
 export default function Carts() {
   const items = useSelector((state) => state.cart.items);
+  const isCartOpen = useSelector((state) => state.cart.isCartOpen);
   const dispatch = useDispatch();
 
   const handleQuantity = (id, num) => {
@@ -18,8 +19,13 @@ export default function Carts() {
   };
 
   return (
-    <div className={style.largeBox}>
-      <button className={style.xbtn}>
+    <div className={`${style.largeBox} ${isCartOpen ? style.open : ""}`}>
+      <button
+        className={style.xbtn}
+        onClick={() => {
+          dispatch(toggleCart());
+        }}
+      >
         <X className={style.icon_x} />
       </button>
       <div className={style.item_box}>
@@ -29,13 +35,15 @@ export default function Carts() {
               <div className={style.bigBox}>
                 <img
                   className={style.img_item}
-                  src={item.image}
+                  src={`${process.env.PUBLIC_URL}/${item.image}`}
                   alt={item.name}
                   loading="lazy"
                 />
               </div>
               <p
                 style={{
+                  textAlign: "center",
+                  maxWidth: "210px",
                   fontSize: "24px",
                   fontWeight: "bold",
                   display: "flex",
@@ -51,30 +59,18 @@ export default function Carts() {
                       <Plus className={style.icon} />
                     </button>
                   ) : (
-                    <button
-                      className={style.moveBtn}
-                      onClick={() => handleQuantity(item.id, 1)}
-                    >
+                    <button className={style.moveBtn} onClick={() => handleQuantity(item.id, 1)}>
                       <Plus className={style.icon} />
                     </button>
                   )}
 
-                  <button
-                    className={style.moveBtn}
-                    onClick={() => handleQuantity(item.id, -1)}
-                  >
+                  <button className={style.moveBtn} onClick={() => handleQuantity(item.id, -1)}>
                     <Minus className={style.icon} />
                   </button>
                 </div>
                 <p className={style.pName}>수량 {item.quantity}개</p>
                 <p className={style.pName}>
-                  가격{" "}
-                  {(
-                    item.price *
-                    item.quantity *
-                    (1 - item.discount)
-                  ).toLocaleString()}
-                  원
+                  가격 {(item.price * item.quantity * (1 - item.discount)).toLocaleString()}원
                 </p>
               </div>
             </div>
@@ -85,14 +81,7 @@ export default function Carts() {
         <p className={style.name}>총 가격 </p>
         <p className={style.total_price}>
           &nbsp;&nbsp;
-          {items
-            .reduce(
-              (sum, item) =>
-                sum + item.price * item.quantity * (1 - item.discount),
-              0
-            )
-            .toLocaleString()}
-          원
+          {items.reduce((sum, item) => sum + item.price * item.quantity * (1 - item.discount), 0).toLocaleString()}원
         </p>
         <div className={style.btn}>
           <button

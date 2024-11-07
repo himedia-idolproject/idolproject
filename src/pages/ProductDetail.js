@@ -6,35 +6,19 @@ import { addItem } from "../reduxComponents/cartSlice";
 
 export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
-  const { id } = useParams(); 
+  const { id } = useParams();
   const products = useSelector((state) => state.products.products);
-  const cartItems = useSelector((state) => state.cart.items); 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const selectedItem = products.find((t) => t.id.toString() === id);
 
-  useEffect(() => {
-    if (selectedItem) {
-      console.log("현재 카트 아이템:", cartItems);
-    } else {
-      console.log("상품을 찾을 수 없습니다.");
-    }
-  }, [cartItems, selectedItem]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const item = {
-      id: selectedItem.id,
-      name: selectedItem.name,
-      quantity: quantity,
-      price: selectedItem.price,
-      discountedPrice: (selectedItem.price - selectedItem.price * selectedItem.discount) * quantity,
-    };
-
+    const item = { ...selectedItem, quantity: quantity };
     dispatch(addItem(item));
-    navigate(-1); 
+    navigate(-1);
   };
 
   if (!selectedItem) {
@@ -70,22 +54,14 @@ export default function ProductDetail() {
             {selectedItem.discount === 0 ? (
               <>
                 <span className={style["stringPrice"]}>가격</span>
-                <span className={style["price"]}>
-                  {(selectedItem.price * quantity).toLocaleString()}
-                </span>
+                <span className={style["price"]}>{(selectedItem.price * quantity).toLocaleString()}</span>
               </>
             ) : (
               <>
                 <span className={style["stringPrice"]}>가격</span>
-                <span className={style["originPrice"]}>
-                  {(selectedItem.price * quantity).toLocaleString()}
-                </span>
+                <span className={style["originPrice"]}>{(selectedItem.price * quantity).toLocaleString()}</span>
                 <span className={style["price"]}>
-                  {(
-                    (selectedItem.price -
-                      selectedItem.price * selectedItem.discount) *
-                    quantity
-                  ).toLocaleString()}
+                  {((selectedItem.price - selectedItem.price * selectedItem.discount) * quantity).toLocaleString()}
                 </span>{" "}
                 원
               </>
