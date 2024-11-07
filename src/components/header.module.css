@@ -16,8 +16,7 @@
 
 @font-face {
   font-family: "Bazzi";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/Bazzi.woff")
-    format("woff");
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/Bazzi.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -71,8 +70,5 @@ header {
   color: black;
 }
 .nav-link {
-  color: #ffffff;
-  /* font-family: "SDSamliphopangche_Basic"; */
-  /* font-family: "GeekbleMalang2WOFF2"; */
-  font-family: "Bazzi";
+  color: rgb(255, 255, 255, 0.6);
 }
