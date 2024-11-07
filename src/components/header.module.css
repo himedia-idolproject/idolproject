@@ -1,7 +1,31 @@
+/* @font-face {
+  font-family: "SDSamliphopangche_Basic";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* @font-face {
+  font-family: "GeekbleMalang2WOFF2";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/GeekbleMalang2WOFF2.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: "Bazzi";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/Bazzi.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 header {
   width: 100%;
   height: 96px;
-  background-color: white;
+  background-color: rgb(253, 165, 234);
+  border-bottom: 1px solid #000;
   padding: 25px 100px;
   box-sizing: border-box;
 }
@@ -38,7 +62,7 @@ header {
 
 .nav_container li {
   margin-right: 20px;
-  font-family: sans-serif;
+
   font-weight: 400;
   font-size: 32px;
   line-height: 46.34px;
@@ -47,5 +71,8 @@ header {
   color: black;
 }
 .nav-link {
-  color: #868181;
+  color: #ffffff;
+  /* font-family: "SDSamliphopangche_Basic"; */
+  /* font-family: "GeekbleMalang2WOFF2"; */
+  font-family: "Bazzi";
 }
