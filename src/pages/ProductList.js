@@ -1,19 +1,20 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { ShoppingCart, CreditCard } from "lucide-react";
+import { toggleCart } from "../reduxComponents/cartSlice";
 import "./productList.css";
 
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import SwiperItem from "../components/SwiperItem";
-import { useSelector } from "react-redux";
-import { useParams, useNavigate } from "react-router-dom";
 import "./productList.css";
-import { ShoppingCart, CreditCard } from "lucide-react";
 
 export default function ProductList() {
   const { idolGroup } = useParams();
+  const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const cartItems = useSelector((state) => state.cart.items);
   const navigate = useNavigate();
@@ -33,7 +34,8 @@ export default function ProductList() {
       : stationery;
 
   return (
-    <>
+    <div className="listContainer">
+      {/* <Carts /> */}
       <section>
         <h3>악세서리</h3>
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={4} spaceBetween={50}>
@@ -56,14 +58,20 @@ export default function ProductList() {
       </section>
       {cartAmount > 0 && (
         <div className="buttonDiv">
-          <button className="topButton">
-            <span className="cartAmount">{cartAmount}</span> <ShoppingCart />{" "}
+          <button
+            className="topButton"
+            onClick={() => {
+              dispatch(toggleCart());
+            }}
+          >
+            <span className="cartAmount">{cartAmount}</span>
+            <ShoppingCart />{" "}
           </button>
           <button className="bottomButton" onClick={() => navigate("/payment")}>
             <CreditCard />
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 }

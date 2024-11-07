@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   items: [],
   total: 0,
+  isCartOpen: false,
 };
 // quantity는 필요한 컴포넌트에서 useState로 생성하여서 넘기는걸로
 const cartSlice = createSlice({
@@ -47,6 +48,10 @@ const cartSlice = createSlice({
         (sum, item) => sum + item.price * item.quantity,
         0
       );
+    },
+
+    toggleCart: (state) => {
+      state.isCartOpen = !state.isCartOpen;
     },
 
     clearCart: (state) => {
