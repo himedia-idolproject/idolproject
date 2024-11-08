@@ -38,6 +38,10 @@
     overflow-y: auto;
   }
 
+  .container.paymentPage {
+    overflow-y: hidden;
+  }
+
   .payment {
     height: 70%;
     overflow: auto;
