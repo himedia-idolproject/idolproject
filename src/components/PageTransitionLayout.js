@@ -23,7 +23,7 @@ const PageTransitionLayout = ({ children }) => {
       animate="animate"
       exit="exit"
       variants={pageTransition}
-      transition={{ duration: 0.37 }}
+      transition={{ duration: 0.35 }}
       className="w-full"
     >
       {children}
