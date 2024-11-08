@@ -153,7 +153,7 @@ export default function Payment() {
                   b.textContent = secondsLeft;
                   if (secondsLeft <= 0) {
                     clearInterval(timerInterval);
-                    Swal.close(); // 모달 창 닫기
+                    Swal.close();
                     navigate("/");
                   }
                 }, 1000);
@@ -192,7 +192,7 @@ export default function Payment() {
         <hr />
         <div className={style.total}>
           <h2>결제예상금액</h2>
-          <p style={{ fontSize: "32px", fontWeight: "bold" }}>{(total - total_discount).toLocaleString()}원</p>
+          <p style={{ fontSize: "2rem", fontWeight: "bold" }}>{(total - total_discount).toLocaleString()}원</p>
         </div>
         <ul>
           <li>• 교환 및 반품은 수령 후 7일 이내로 접수하셔야합니다.</li>
