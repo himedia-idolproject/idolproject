@@ -22,15 +22,15 @@ header {
 .headerContainer {
   display: flex;
   width: 100%;
-  max-width: 1200px; /* 최대 너비 설정 */
-  margin: 0 auto; /* 가운데 정렬 */
+  max-width: 1200px;
+  margin: 0 auto;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem; /* 양쪽 패딩 추가 */
+  padding: 0 1rem;
   background-color: rgb(253, 165, 234);
   position: fixed;
-  left: 50%; /* 왼쪽에서 50% 위치 */
-  transform: translateX(-50%); /* 자신의 너비의 절반만큼 왼쪽으로 이동 */
+  left: 50%;
+  transform: translateX(-50%);
   top: 0;
   z-index: 1000;
   height: 6rem;
@@ -105,9 +105,8 @@ header {
   }
 
   .headerContainer {
-    padding: 1rem;
-    gap: 2rem;
-    width: 100%; /* 모바일에서는 전체 너비 사용 */
+    padding: 3rem;
+    width: 100%;
   }
 
   .logoImage {

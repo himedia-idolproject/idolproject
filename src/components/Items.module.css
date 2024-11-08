@@ -90,4 +90,37 @@
   .pName {
     font-size: 0.875rem;
   }
+
+  .moveBtn svg {
+    min-width: 32px !important;
+    min-height: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .icon_x {
+    min-width: 48px !important;
+    min-height: 48px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .trash {
+    min-width: 48px !important;
+    min-height: 48px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .moveBtn {
+    width: 3rem;
+    height: 3rem;
+    min-width: 3rem;
+    min-height: 3rem;
+  }
+
+  .delete {
+    width: 4rem;
+    height: 4rem;
+  }
 }
