@@ -24,7 +24,6 @@ export default function Home() {
   };
 
   const handleClick = () => {
-
     if (!isNavigating) {
       setIsNavigating(true);
 

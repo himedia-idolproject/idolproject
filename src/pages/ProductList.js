@@ -48,6 +48,10 @@ export default function ProductList() {
               slidesPerView: 1,
               spaceBetween: 10,
             },
+            375: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
           }}
         >
           {filteredAccessories.map((product) => (
@@ -69,6 +73,10 @@ export default function ProductList() {
             374: {
               slidesPerView: 1,
               spaceBetween: 10,
+            },
+            375: {
+              slidesPerView: 4,
+              spaceBetween: 50,
             },
           }}
         >
