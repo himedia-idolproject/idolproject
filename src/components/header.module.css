@@ -92,7 +92,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 374px) {
+@media (max-width: px) {
   .burgerMenu {
     display: block;
   }
