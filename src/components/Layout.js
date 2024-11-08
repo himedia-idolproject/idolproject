@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useLocation } from "react-router-dom";
 import { toggleCart } from "../reduxComponents/cartSlice";
@@ -11,29 +11,47 @@ export default function Layout() {
   const location = useLocation();
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
   const isPaymentPage = location.pathname === "/product/payment";
-  const containerRef = useRef(null);
+  const listContainerRef = useRef(null);
   const dispatch = useDispatch();
+  const [listContainerHeight, setListContainerHeight] = useState("100%");
 
   useEffect(() => {
-    if (isCartOpen && containerRef.current) {
-      containerRef.current.scrollTop = 0;
+    const updateHeight = () => {
+      if (window.innerWidth > 1200) {
+        setListContainerHeight("100%");
+      } else if (isPaymentPage) {
+        setListContainerHeight("70%");
+      } else {
+        setListContainerHeight("100%");
+      }
+    };
+
+    window.addEventListener("resize", updateHeight);
+    updateHeight();
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, [isPaymentPage]);
+
+  useEffect(() => {
+    if (isCartOpen && listContainerRef.current) {
+      listContainerRef.current.scrollTop = 0;
     }
   }, [isCartOpen]);
 
   let containerClasses = [style.container];
-  if (isPaymentPage) {
-    containerClasses.push(style.payment);
-  }
   if (isCartOpen) {
     containerClasses.push(style.noOverflow);
   }
+  if (isPaymentPage && window.innerWidth <= 440) {
+    containerClasses.push(style.paymentPage);
+  }
 
-  const containerStyle = {
-    height: isPaymentPage ? "70%" : "100%",
+  const listContainerStyle = {
+    height: listContainerHeight,
   };
 
   return (
-    <div className={containerClasses.join(" ")} ref={containerRef} style={containerStyle}>
+    <div className={containerClasses.join(" ")} ref={listContainerRef}>
       <Carts className={style.cartList} />
       {isCartOpen && (
         <div
@@ -46,9 +64,11 @@ export default function Layout() {
       <header className={style.header}>
         <Header />
       </header>
-      <PageTransitionLayout>
-        <Outlet />
-      </PageTransitionLayout>
+      <div className={style.listContainer} style={listContainerStyle}>
+        <PageTransitionLayout>
+          <Outlet />
+        </PageTransitionLayout>
+      </div>
     </div>
   );
 }
