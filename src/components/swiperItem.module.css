@@ -8,5 +8,21 @@
 .discountPrice,
 .priceTag {
   color: black;
-  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+@media (max-width: 374px) {
+  .cartItem {
+    width: 50%;
+    padding: 0.5rem;
+  }
+
+  .cartItem img {
+    max-width: 100%;
+  }
+
+  .discountPrice,
+  .priceTag {
+    /* font-size: 0.875rem; */
+  }
 }

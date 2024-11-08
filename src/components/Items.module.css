@@ -2,20 +2,20 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  max-width: 680px;
+  max-width: 42.5rem;
   display: flex;
   align-items: center;
-  padding: 0px 61.5px 20px;
+  padding: 0px 3.84375rem 1.25rem;
 }
 
 .com {
   border: 3px solid rgb(255, 181, 255);
-  width: 557px;
-  height: 166px;
+  width: 34.8125rem;
+  height: 10.375rem;
   border-radius: 10px;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 1.25rem;
   display: flex;
   flex-direction: row;
   background-color: white;
@@ -23,8 +23,8 @@
 
 .bigBox {
   border: 3px solid rgb(255, 214, 255);
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -40,15 +40,15 @@
 
 .btn {
   display: flex;
-  gap: 10px;
-  padding: 10px 20px;
+  gap: 0.625rem;
+  padding: 0.625rem 1.25rem;
 }
 
 .moveBtn {
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   border: 1px solid #fce8f2;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,10 +57,70 @@
 
 .pName {
   text-align: center;
-  font-size: 16px;
-  padding: 5px 10px;
+  font-size: 1rem;
+  padding: 0.3125rem 0.625rem;
 }
 
 .icon {
   color: #fce8f2;
+}
+
+@media (max-width: 374px) {
+  .box {
+    padding: 0 1.5rem 1.25rem;
+  }
+
+  .com {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bigBox {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .moveBtn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .pName {
+    font-size: 0.875rem;
+  }
+
+  .moveBtn svg {
+    min-width: 32px !important;
+    min-height: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .icon_x {
+    min-width: 48px !important;
+    min-height: 48px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .trash {
+    min-width: 48px !important;
+    min-height: 48px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .moveBtn {
+    width: 3rem;
+    height: 3rem;
+    min-width: 3rem;
+    min-height: 3rem;
+  }
+
+  .delete {
+    width: 4rem;
+    height: 4rem;
+  }
 }

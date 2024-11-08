@@ -44,7 +44,7 @@ export default function ProductDetail() {
         </div>
         <div className={style["info-section"]}>
           <h1>{selectedItem.name}</h1>
-          <div>
+          <div className={style["quantity-box"]}>
             <label className={style["quantity"]} htmlFor="quantity">
               수량
             </label>

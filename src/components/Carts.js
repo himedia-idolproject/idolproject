@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Trash2, X, Plus, Minus } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./Carts.module.css";
@@ -8,6 +8,16 @@ export default function Carts() {
   const items = useSelector((state) => state.cart.items);
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
   const dispatch = useDispatch();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 414);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 414);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleQuantity = (id, num) => {
     const item = items.find((item) => item.id === id);
@@ -18,6 +28,10 @@ export default function Carts() {
     }
   };
 
+  const iconSize = isMobile ? 32 : 24;
+  const xIconSize = isMobile ? 48 : 30;
+  const trashIconSize = isMobile ? 48 : 70;
+
   return (
     <div className={`${style.largeBox} ${isCartOpen ? style.open : ""}`}>
       <button
@@ -26,7 +40,7 @@ export default function Carts() {
           dispatch(toggleCart());
         }}
       >
-        <X className={style.icon_x} />
+        <X size={xIconSize} className={style.icon_x} />
       </button>
       <div className={style.item_box}>
         {items.map((item) => (
@@ -43,8 +57,8 @@ export default function Carts() {
               <p
                 style={{
                   textAlign: "center",
-                  maxWidth: "210px",
-                  fontSize: "24px",
+                  maxWidth: "13.125rem",
+                  fontSize: "1.5rem",
                   fontWeight: "bold",
                   display: "flex",
                   alignItems: "center",
@@ -56,16 +70,16 @@ export default function Carts() {
                 <div className={style.btn}>
                   {item.quantity === 5 ? (
                     <button disabled className={style.moveBtn}>
-                      <Plus className={style.icon} />
+                      <Plus size={iconSize} className={style.icon} />
                     </button>
                   ) : (
                     <button className={style.moveBtn} onClick={() => handleQuantity(item.id, 1)}>
-                      <Plus className={style.icon} />
+                      <Plus size={iconSize} className={style.icon} />
                     </button>
                   )}
 
                   <button className={style.moveBtn} onClick={() => handleQuantity(item.id, -1)}>
-                    <Minus className={style.icon} />
+                    <Minus size={iconSize} className={style.icon} />
                   </button>
                 </div>
                 <p className={style.pName}>수량 {item.quantity}개</p>
@@ -90,7 +104,7 @@ export default function Carts() {
               dispatch(clearCart());
             }}
           >
-            <Trash2 className={style.trash} />
+            <Trash2 size={trashIconSize} className={style.trash} />
           </button>
         </div>
       </div>
