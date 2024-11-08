@@ -35,6 +35,12 @@
     left: 0;
     transform: none;
     border: none;
+    overflow-y: auto;
+  }
+
+  .payment {
+    height: 70%;
+    overflow: auto;
   }
 
   .overflowY {

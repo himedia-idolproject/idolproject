@@ -10,7 +10,7 @@ import PageTransitionLayout from "./PageTransitionLayout";
 export default function Layout() {
   const location = useLocation();
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
-  const isPaymentPage = location.pathname === "/payment";
+  const isPaymentPage = location.pathname === "/product/payment";
   const containerRef = useRef(null);
   const dispatch = useDispatch();
 
@@ -20,10 +20,20 @@ export default function Layout() {
     }
   }, [isCartOpen]);
 
-  const containerClass = `${style.container} ${isPaymentPage || isCartOpen ? style.noOverflow : style.overflowY}`;
+  let containerClasses = [style.container];
+  if (isPaymentPage) {
+    containerClasses.push(style.payment);
+  }
+  if (isCartOpen) {
+    containerClasses.push(style.noOverflow);
+  }
+
+  const containerStyle = {
+    height: isPaymentPage ? "70%" : "100%",
+  };
 
   return (
-    <div className={containerClass} ref={containerRef}>
+    <div className={containerClasses.join(" ")} ref={containerRef} style={containerStyle}>
       <Carts className={style.cartList} />
       {isCartOpen && (
         <div
