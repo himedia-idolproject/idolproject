@@ -64,3 +64,30 @@
 .icon {
   color: #fce8f2;
 }
+
+@media (max-width: 374px) {
+  .box {
+    padding: 0 1.5rem 1.25rem;
+  }
+
+  .com {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bigBox {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .moveBtn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .pName {
+    font-size: 0.875rem;
+  }
+}

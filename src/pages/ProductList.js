@@ -35,10 +35,21 @@ export default function ProductList() {
 
   return (
     <div className="listContainer">
-      {/* <Carts /> */}
       <section>
         <h3>악세서리</h3>
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={4} spaceBetween={50}>
+        <Swiper
+          navigation={true}
+          modules={[Navigation]}
+          className="mySwiper"
+          slidesPerView={4}
+          spaceBetween={50}
+          breakpoints={{
+            374: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+          }}
+        >
           {filteredAccessories.map((product) => (
             <SwiperSlide key={product.id}>
               <SwiperItem product={product} />
@@ -48,7 +59,19 @@ export default function ProductList() {
       </section>
       <section>
         <h3>문구/취미</h3>
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper" slidesPerView={4} spaceBetween={50}>
+        <Swiper
+          navigation={true}
+          modules={[Navigation]}
+          className="mySwiper"
+          slidesPerView={4}
+          spaceBetween={50}
+          breakpoints={{
+            374: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+          }}
+        >
           {filteredStationery.map((product) => (
             <SwiperSlide key={product.id}>
               <SwiperItem product={product} />
@@ -65,7 +88,7 @@ export default function ProductList() {
             }}
           >
             <span className="cartAmount">{cartAmount}</span>
-            <ShoppingCart />{" "}
+            <ShoppingCart />
           </button>
           <button className="bottomButton" onClick={() => navigate("/product/payment")}>
             <CreditCard />

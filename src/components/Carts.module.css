@@ -155,3 +155,46 @@
 .total_name {
   font-size: 1rem;
 }
+
+@media (max-width: 374px) {
+  .box {
+    padding: 0 1.5rem 1.25rem;
+  }
+
+  .com {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bigBox {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .moveBtn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .trash {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .delete {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .largeBox {
+    width: 100%;
+    height: 100%;
+    right: -100%;
+  }
+
+  .largeBox.open {
+    transform: translateX(-100%);
+  }
+}

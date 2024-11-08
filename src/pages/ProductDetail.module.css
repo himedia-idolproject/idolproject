@@ -149,3 +149,87 @@ button {
 .cancel-button:hover {
   background-color: #c82333;
 }
+@media (max-width: 374px) {
+  .containers {
+    padding: 0.5rem;
+  }
+
+  .imageInfo-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .info-section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-section h1 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .quantity {
+    margin-bottom: 1rem;
+  }
+
+  .info-section label {
+    font-size: 1rem;
+  }
+
+  .info-section p {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .addQuantity {
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .stringPrice {
+    font-size: 1.2rem;
+  }
+
+  .originPrice {
+    margin-left: 1rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+
+  .button-section button {
+    width: 100%;
+    height: auto;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .add-button {
+    margin-bottom: 0.5rem;
+  }
+
+  .cancel-button {
+    width: 100%;
+    height: auto;
+    padding: 0.75rem;
+  }
+}

@@ -103,3 +103,47 @@ li {
   stroke-width: 0.8;
   color: hotpink;
 }
+
+@media (max-width: 374px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .box {
+    gap: 1.5rem;
+  }
+
+  .first {
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  li {
+    /* font-size: 0.875rem; */
+  }
+
+  .pay {
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+
+  .delete {
+    height: 4rem;
+  }
+
+  .trash {
+    width: 2rem;
+    height: 2rem;
+  }
+}

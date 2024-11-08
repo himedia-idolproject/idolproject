@@ -83,6 +83,7 @@ section {
   width: 100%;
   margin: 0 auto;
   padding: 1.875rem 5.625rem 0;
+  margin-top: 3rem;
 }
 
 .swiper-slide > div {
@@ -91,20 +92,20 @@ section {
   gap: 1.25rem;
   overflow: hidden;
   align-items: center;
+  width: 90%;
 }
 
 .listContainer {
-  height: calc(100vh - 18.75rem);
   position: relative;
   padding-bottom: 0;
   overflow-y: auto;
+  max-height: calc(100vh - 8rem);
 }
 
 .buttonDiv {
   position: sticky;
   left: 75rem;
   width: 5rem;
-  /* height: 140px; */
   bottom: 1.25rem;
   z-index: 100;
   padding: 10px;
@@ -154,4 +155,50 @@ section {
   position: absolute;
   right: 1.125rem;
   top: 1.75rem;
+}
+
+@media (max-width: 374px) {
+  h3 {
+    padding-left: 30px;
+    padding-bottom: 10px;
+  }
+  section {
+    padding: 0;
+  }
+  section:first-child {
+    margin-top: 8rem;
+  }
+  .swiper-slide img {
+    height: 20rem;
+  }
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 13rem;
+  }
+  .listContainer {
+    padding-bottom: 5rem;
+    max-height: none;
+  }
+
+  .buttonDiv {
+    padding: 0.25rem;
+  }
+
+  .topButton,
+  .bottomButton {
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  .cartAmount {
+    width: 1.25rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    right: 0.5rem;
+    top: 0.5rem;
+  }
 }
