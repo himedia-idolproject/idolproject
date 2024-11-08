@@ -91,7 +91,7 @@ export default function Carts() {
           </div>
         ))}
       </div>
-      <div className={style.total_box}>
+      <div className={`${style.total_box} ${isCartOpen ? style.fixed : ""}`}>
         <p className={style.name}>총 가격 </p>
         <p className={style.total_price}>
           &nbsp;&nbsp;
