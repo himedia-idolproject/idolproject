@@ -8,11 +8,11 @@ export default function Carts() {
   const items = useSelector((state) => state.cart.items);
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
   const dispatch = useDispatch();
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 374);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 440);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 374);
+      setIsMobile(window.innerWidth <= 440);
     };
 
     window.addEventListener("resize", handleResize);

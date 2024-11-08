@@ -105,7 +105,7 @@ li {
   color: hotpink;
 }
 
-@media (max-width: 374px) {
+@media (max-width: 440px) {
   .container {
     margin-top: 70px;
     padding-left: 30px;

@@ -44,11 +44,11 @@ export default function ProductList() {
           slidesPerView={4}
           spaceBetween={50}
           breakpoints={{
-            374: {
+            440: {
               slidesPerView: 1,
               spaceBetween: 10,
             },
-            375: {
+            441: {
               slidesPerView: 4,
               spaceBetween: 50,
             },
@@ -70,11 +70,11 @@ export default function ProductList() {
           slidesPerView={4}
           spaceBetween={50}
           breakpoints={{
-            374: {
+            440: {
               slidesPerView: 1,
               spaceBetween: 10,
             },
-            375: {
+            441: {
               slidesPerView: 4,
               spaceBetween: 50,
             },

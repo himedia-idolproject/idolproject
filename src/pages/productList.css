@@ -158,7 +158,7 @@ section {
   top: 1.75rem;
 }
 
-@media (max-width: 374px) {
+@media (max-width: 440px) {
   h3 {
     padding-left: 30px;
     padding-bottom: 10px;
