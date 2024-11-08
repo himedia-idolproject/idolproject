@@ -43,8 +43,8 @@ export default function Carts() {
               <p
                 style={{
                   textAlign: "center",
-                  maxWidth: "210px",
-                  fontSize: "24px",
+                  maxWidth: "13.125rem",
+                  fontSize: "1.5rem",
                   fontWeight: "bold",
                   display: "flex",
                   alignItems: "center",
