@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,6 +19,17 @@ export default function ProductList() {
   const cartItems = useSelector((state) => state.cart.items);
   const navigate = useNavigate();
   const cartAmount = cartItems.length;
+  const [slidesPerView, setSlidesPerView] = useState(window.innerWidth <= 440 ? 1 : 4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesPerView(window.innerWidth <= 440 ? 1 : 4);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const accessories = products.filter((product) => product.category === "accessory");
   const stationery = products.filter((product) => product.category === "stationery");
@@ -41,18 +52,8 @@ export default function ProductList() {
           navigation={true}
           modules={[Navigation]}
           className="mySwiper"
-          slidesPerView={4}
+          slidesPerView={slidesPerView}
           spaceBetween={50}
-          breakpoints={{
-            440: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            441: {
-              slidesPerView: 4,
-              spaceBetween: 50,
-            },
-          }}
         >
           {filteredAccessories.map((product) => (
             <SwiperSlide key={product.id}>
@@ -67,18 +68,8 @@ export default function ProductList() {
           navigation={true}
           modules={[Navigation]}
           className="mySwiper"
-          slidesPerView={4}
+          slidesPerView={slidesPerView}
           spaceBetween={50}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            441: {
-              slidesPerView: 4,
-              spaceBetween: 50,
-            },
-          }}
         >
           {filteredStationery.map((product) => (
             <SwiperSlide key={product.id}>
