@@ -239,11 +239,14 @@
 
   .total_box {
     height: 100px;
-    /* position: fixed; */
     bottom: 0;
     left: 0;
     right: 0;
     padding: 0 1rem;
+  }
+
+  .total_box.fixed {
+    position: fixed;
   }
 
   .total_price {
