@@ -155,13 +155,14 @@ button {
   }
 
   .imageInfo-section {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .image-section {
     margin: 0 auto;
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
     margin-bottom: 1rem;
     width: 100%;
     height: auto;
