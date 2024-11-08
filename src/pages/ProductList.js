@@ -86,8 +86,10 @@ export default function ProductList() {
               dispatch(toggleCart());
             }}
           >
-            <span className="cartAmount">{cartAmount}</span>
-            <ShoppingCart />
+            <div className="ShoppingCartBox">
+              <ShoppingCart />
+              <span className="cartAmount">{cartAmount}</span>
+            </div>
           </button>
           <button className="bottomButton" onClick={() => navigate("/product/payment")}>
             <CreditCard />

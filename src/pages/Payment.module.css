@@ -7,7 +7,7 @@
 }
 
 .item_box {
-  overflow-y: auto;
+  overflow-y: visible;
   padding-top: 20px;
   height: 100%;
   padding-bottom: 130px;
@@ -108,8 +108,13 @@ li {
 @media (max-width: 440px) {
   .container {
     margin-top: 70px;
+    margin-bottom: 350px;
     padding-left: 30px;
     padding-bottom: 20rem;
+  }
+
+  hr {
+    display: none;
   }
 
   .item_box {
@@ -127,14 +132,17 @@ li {
   }
 
   .box {
+    width: 100%;
+    background-color: #fff;
     gap: 1rem;
     padding: 1rem;
     bottom: 0;
-    left: 50px;
+    left: 0;
   }
 
   .first {
     gap: 0.75rem;
+    display: none;
   }
 
   h2 {
