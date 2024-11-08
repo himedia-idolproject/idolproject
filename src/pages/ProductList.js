@@ -70,7 +70,7 @@ export default function ProductList() {
           slidesPerView={4}
           spaceBetween={50}
           breakpoints={{
-            440: {
+            0: {
               slidesPerView: 1,
               spaceBetween: 10,
             },
