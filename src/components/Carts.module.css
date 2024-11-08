@@ -232,7 +232,7 @@
   }
 
   .item_box {
-    padding-bottom: 120px;
+    padding-bottom: 160px;
     height: calc(100vh - 60px);
     margin-top: 60px;
   }
@@ -240,10 +240,13 @@
   .total_box {
     height: 100px;
     position: fixed;
-    bottom: 0;
+    bottom: 10rem;
     left: 0;
     right: 0;
     padding: 0 1rem;
+    background-color: white;
+    border-top: 1px solid #000;
+    z-index: 1003;
   }
 
   .total_price {
