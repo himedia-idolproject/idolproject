@@ -83,7 +83,7 @@ section {
   width: 100%;
   margin: 0 auto;
   padding: 1.875rem 5.625rem 0;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
 }
 
 .swiper-slide > div {
@@ -96,8 +96,9 @@ section {
 }
 
 .listContainer {
+  padding-top: 100px;
   position: relative;
-  padding-bottom: 0;
+  padding-bottom: 100px;
   overflow-y: auto;
   max-height: calc(100vh - 8rem);
 }
@@ -180,6 +181,7 @@ section {
     top: 13rem;
   }
   .listContainer {
+    padding-top: 0;
     padding-bottom: 5rem;
     max-height: none;
     overflow-y: visible;

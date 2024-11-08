@@ -15,19 +15,19 @@ export default function Header() {
   };
 
   return (
-    <div className={style.headerContainer}>
-      <div className={style.logoContainer}>
-        <Link to="/product/all">
-          <img src="/idolmateLogo.png" className={style.logoImage} alt="로고이미지" />
-        </Link>
-      </div>
-      <div className={style.burgerMenu} onClick={toggleMenu}>
-        <div className={style.bar}></div>
-        <div className={style.bar}></div>
-        <div className={style.bar}></div>
-      </div>
-      <div className={`${style.navContainer} ${isMenuOpen ? style.showMenu : ""}`}>
-        <nav>
+    <header className={style.header}>
+      <div className={style.headerContainer}>
+        <div className={style.logoContainer}>
+          <Link to="/product/all">
+            <img src="/idolmateLogo.png" className={style.logoImage} alt="로고이미지" />
+          </Link>
+        </div>
+        <div className={`${style.burgerMenu} ${isMenuOpen ? style.active : ""}`} onClick={toggleMenu}>
+          <div className={style.bar}></div>
+          <div className={style.bar}></div>
+          <div className={style.bar}></div>
+        </div>
+        <nav className={`${style.navContainer} ${isMenuOpen ? style.showMenu : ""}`}>
           <ul>
             <li>
               <Link to="/product/all" className={getLinkStyle("/product/all")}>
@@ -57,6 +57,6 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-    </div>
+    </header>
   );
 }
