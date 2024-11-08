@@ -160,7 +160,8 @@ button {
   }
 
   .image-section {
-    margin-top: 1rem;
+    margin: 0 auto;
+    margin-top: 7rem;
     margin-bottom: 1rem;
     width: 100%;
     height: auto;
@@ -175,11 +176,17 @@ button {
   .info-section {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-right: 0;
   }
 
   .info-section h1 {
-    font-size: 1.1rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
+  }
+
+  .quantity-box {
+    display: flex;
+    width: 16rem;
   }
 
   .quantity {
@@ -188,13 +195,16 @@ button {
 
   .info-section label {
     font-size: 1rem;
+    display: inline-block;
+    width: 5rem;
+    padding-top: 0.3rem;
   }
 
   .info-section p {
     font-size: 0.9rem;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
-    width: 100%;
+    width: 40%;
   }
 
   .addQuantity {
@@ -218,9 +228,11 @@ button {
 
   .button-section button {
     width: 100%;
-    height: auto;
+    height: 5rem;
     font-size: 1rem;
     padding: 0.75rem;
+
+    margin-top: 5rem;
   }
 
   .add-button {
